@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { LoginPage } from './pages/loginPage';
+import { MeetupPage } from './pages/meetupPage';
+import { Routes, Route, Link } from 'react-router-dom';
+import { RegistratePage } from './pages/registrationPage';
+const setToken = (token: any) => {
+  sessionStorage.setItem('token', JSON.stringify(token));
+};
+
 
 function App() {
+
+  // if (!token) {
+  //   return <LoginPage setToken={setToken} />;
+  // }
+
+  // return <MeetupPage />;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/login' element={<LoginPage setToken={setToken} />} />
+      <Route path='/meetups' element={<MeetupPage />} />
+      <Route path='/registration' element={<RegistratePage  />} />
+    </Routes>
   );
 }
 
