@@ -2,31 +2,41 @@ import { Meetup } from './meetup';
 import '../styles/meetupList.css';
 import { useEffect, useState } from 'react';
 import { IMeetup } from '../interfaces/meetup';
-import { data } from '../mock/data'
+import { data } from '../mock/data';
+import { getToken } from '../services/token';
 
-export const MeetupList = () => {
-  const [meetups, setMeetups] = useState<IMeetup[]>([]);
+export const MeetupList: React.FC<{meetups: IMeetup[], setMeetups: Function}> = ({meetups, setMeetups}) => {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await window.fetch('http://localhost:3001/meetups', {
+  const deleteMeetup = async (id: string) => {
+    const deletedMeetup = await window.fetch(
+      `http://localhost:3001/meetups/${id}`, {
+        method: 'DELETE',
         headers: {
-          Authorization:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2MyOWU4MjVjYjQ0MjE4M2ZhZTk4NyIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJpYXQiOjE2NjQ4OTkzNjUsImV4cCI6MTY2NDk4NTc2NX0.LPfTbWiWoBwBxfEOvCE1gQKNkzCAkjbosX5T55BLYNE',
+          Authorization: `Bearer ${getToken()}`,
         },
-      });
-      const jsonResult = await result.json();
+      }
+    )
 
-      setMeetups(jsonResult);
-    };
+    if (deletedMeetup.status === 204) {
+      setMeetups(meetups.filter((meetup) => meetup._id !== id));
+    } else {
+      window.alert('Forbidden')
+    }
+  };
 
-    setMeetups(data);
-    // fetchData();
-  }, []);
+
   return (
     <section className='meetup-list'>
       {meetups.map((meetup) => {
-        return <Meetup key={meetup._id} meetup={meetup} />;
+        return (
+          <Meetup
+            key={meetup._id}
+            meetup={meetup}
+            deleteMeetup={() => {
+              deleteMeetup(meetup._id);
+            }}
+          />
+        );
       })}
     </section>
   );

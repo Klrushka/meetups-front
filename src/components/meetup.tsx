@@ -2,9 +2,9 @@ import React from 'react';
 import { IMeetup } from '../interfaces/meetup';
 import '../styles/meetup.css';
 
-const formatDate = (date: string) => new Date(date).toLocaleString()
+const formatDate = (date: string) => new Date(date).toLocaleString();
 
-export const Meetup: React.FunctionComponent<{ meetup: IMeetup }> = (props) => {
+export const Meetup: React.FunctionComponent<{ meetup: IMeetup; deleteMeetup: React.MouseEventHandler }> = (props) => {
   return (
     <div className='meetup'>
       <div className='location'>
@@ -22,6 +22,7 @@ export const Meetup: React.FunctionComponent<{ meetup: IMeetup }> = (props) => {
           return <li>{tag}</li>;
         })}
       </ul>
+      <button onClick={props.deleteMeetup}>Delete</button>
     </div>
   );
 };
