@@ -11,7 +11,7 @@
 .nav-menu ul {
   max-width: 980px;
   list-style-type: none;
-  margin: 0;
+  margin: 0;  
   padding: 0;
   overflow: hidden;
   display: flex;
@@ -20,7 +20,7 @@
   padding-right: 1rem;
 }
 
-.nav-menu li a {
+.nav-menu li span{
   display: block;
   color: white;
   text-align: center;
@@ -44,4 +44,11 @@
 
 .nav-items li {
   display: flex;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 
 export const Navbar: React.FunctionComponent = () => {
@@ -10,13 +11,13 @@ export const Navbar: React.FunctionComponent = () => {
               <img src='meetups.png' alt='meetups'/>
           </li>
           <li>
-            <a href='/#'> About </a>
+            <span> <Link className='link' to='/pdf'>PDF</Link></span>
           </li>
           <li>
-            <a href='/#'> Meetups </a>
+            <span><Link className='link' to='/meetups'> Meetups </Link></span>
           </li>
           <li>
-            <a href='/#'> Home </a>
+            <span> <Link className='link' to='/csv'> CSV </Link></span>
           </li>
         </ul>
       </div>

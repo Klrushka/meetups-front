@@ -24,13 +24,12 @@ export const ControlPanel: React.FC<{ setShowModal: Function; meetups: IMeetup[]
       <div className='controlPanel'>
         <input
           onChange={async (event) => {
-            const result = await search(event.target.value);
-            const esMeetups = await result.json();
-            if (esMeetups.body) {
-              const findedMeetups = esMeetups.body.hits.hits.map((item) => item._source._doc);
+            const result = await search(event.target.value).then(result => result.json());
+            if (result.body) {
+              const findedMeetups = result.body.hits.hits.map((item) => item._source._doc);
               setMeetups(findedMeetups);
             } else {
-              setMeetups(esMeetups);
+              setMeetups(result);
             }
           }}
         />
