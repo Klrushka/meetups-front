@@ -1,0 +1,21 @@
+.pdfLink {
+  margin: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1D2D44;
+  box-shadow: -12px 10px #3E5C76;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform .3s; 
+ 
+}
+
+.pdfLink:hover {
+  transform: scale(1.03);
+}
+
+.pdfLink a {
+  text-decoration: none;
+  color: white;
+}
