@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { ILoginCredentials } from '../interfaces/loginCredentials';
 import '../styles/form.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { GoogleLogin } from '@leecheuk/react-google-login';
 
 const loginUser = async (credentials: ILoginCredentials) => {
   const token = await window.fetch('http://localhost:3000/auth/login', {

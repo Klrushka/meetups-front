@@ -1,8 +1,6 @@
 import { Meetup } from './meetup';
 import '../styles/meetupList.css';
-import { useEffect, useState } from 'react';
 import { IMeetup } from '../interfaces/meetup';
-import { data } from '../mock/data';
 import { getToken } from '../services/token';
 
 export const MeetupList: React.FC<{meetups: IMeetup[], setMeetups: Function}> = ({meetups, setMeetups}) => {
