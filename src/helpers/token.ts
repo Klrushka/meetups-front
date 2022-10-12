@@ -4,5 +4,8 @@ export const getToken = () => {
   return userToken?.token;
 };
 
+export const setToken = (token: any) => {
+  sessionStorage.setItem('token', JSON.stringify(token));
+};
 
 

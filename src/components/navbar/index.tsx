@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { navbarRoutes } from '../../mock/navbar.routes';
 import './index.css';
 
 export const Navbar: React.FunctionComponent = () => {
@@ -10,15 +11,11 @@ export const Navbar: React.FunctionComponent = () => {
           <li>
               <img src='meetups.png' alt='meetups'/>
           </li>
-          <li>
-            <span> <Link className='link' to='/pdf'>PDF</Link></span>
+          {navbarRoutes.map(route => (
+            <li>
+            <span> <Link className='link' to={route.to}>{route.value}</Link></span>
           </li>
-          <li>
-            <span><Link className='link' to='/meetups'> Meetups </Link></span>
-          </li>
-          <li>
-            <span> <Link className='link' to='/csv'> CSV </Link></span>
-          </li>
+          ))}
         </ul>
       </div>
     </nav>
