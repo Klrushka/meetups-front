@@ -1,7 +1,7 @@
 import { IRegistrationCredentials } from '../interfaces/registration.credentials.interface';
 
 export const registrateUser = async (credentials: IRegistrationCredentials) => {
-  const url = 'http://localhost:3000/auth/registration';
+  const url = process.env.REACT_APP_USER_REGISTRATION;
   const token = await window.fetch(url, {
     method: 'POST',
     headers: {

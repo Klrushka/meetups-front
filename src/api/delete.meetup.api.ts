@@ -1,7 +1,7 @@
 import { getToken } from '../helpers/token';
 
 export const deleteMeetup = async (id: string) => {
-  const url = `http://localhost:3001/meetups/${id}`;
+  const url = `${process.env.REACT_APP_MEETUPS}/${id}`;
   const token = `Bearer ${getToken()}`;
   const deletedMeetup = await window.fetch(
     url, {

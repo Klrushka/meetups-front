@@ -9,6 +9,7 @@ import '@components/meetups-list'
 import { IMeetup } from '@interfaces/meetup.interface';
 import { data } from '@mock/data';
 import './index.css'
+import { fetchData } from '@api';
 
 
 
@@ -19,19 +20,8 @@ export const MeetupPage = () => {
 
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await window.fetch('http://localhost:3001/meetups', {
-        headers: {
-          Authorization: `Bearer ${getToken()}`,
-        },
-      });
-      const jsonResult = await result.json();
-
-      setMeetups(jsonResult);
-    };
-
     setMeetups(data);
-    // fetchData();
+    fetchData(setMeetups);
   }, []);
 
   if (token) {

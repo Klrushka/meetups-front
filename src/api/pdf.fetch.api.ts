@@ -2,7 +2,7 @@ import { getToken } from '../helpers/token';
 
 export const fetchPdf = async (setPdfLink: Function) => {
   const token = `Bearer ${getToken()}`;
-  const url = 'http://localhost:3001/meetupspdf';
+  const url = process.env.REACT_APP_MEETUPS_PDF;
   await window
     .fetch(url, {
       method: 'GET',

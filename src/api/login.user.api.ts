@@ -1,7 +1,7 @@
 import { ILoginCredentials } from '../interfaces/login.credentials.interface';
 
 export const loginUser = async (credentials: ILoginCredentials) => {
-  const url = 'http://localhost:3000/auth/login';
+  const url = process.env.REACT_APP_USER_LOGIN;
   const token = await window.fetch(url, {
     method: 'POST',
     headers: {
