@@ -1,4 +1,4 @@
-import { ILoginCredentials } from '../interfaces/login.credentials.interface';
+import { ILoginCredentials } from '@interfaces';
 
 export const loginUser = async (credentials: ILoginCredentials) => {
   const url = process.env.REACT_APP_USER_LOGIN;

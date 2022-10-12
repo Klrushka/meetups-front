@@ -1,4 +1,4 @@
-import { IRegistrationCredentials } from '../interfaces/registration.credentials.interface';
+import { IRegistrationCredentials } from '@interfaces';
 
 export const registrateUser = async (credentials: IRegistrationCredentials) => {
   const url = process.env.REACT_APP_USER_REGISTRATION;

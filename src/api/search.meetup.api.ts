@@ -1,4 +1,4 @@
-import { getToken } from 'src/helpers/token';
+import { getToken } from '@helpers';
 
 export const search = async (title: string) => {
   const url = `${process.env.REACT_APP_MEETUPS}${title ? `?search=${title}` : ''}`;

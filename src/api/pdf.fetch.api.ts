@@ -1,4 +1,4 @@
-import { getToken } from '../helpers/token';
+import { getToken } from '@helpers';
 
 export const fetchPdf = async (setPdfLink: Function) => {
   const token = `Bearer ${getToken()}`;

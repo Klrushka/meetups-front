@@ -1,4 +1,4 @@
-import { getToken } from '../helpers/token';
+import { getToken } from '@helpers';
 
 export const deleteMeetup = async (id: string) => {
   const url = `${process.env.REACT_APP_MEETUPS}/${id}`;
