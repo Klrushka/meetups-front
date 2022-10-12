@@ -1,20 +1,12 @@
-import { Meetup } from './meetup';
-import '../styles/meetupList.css';
-import { IMeetup } from '../interfaces/meetup';
-import { getToken } from '../services/token';
+import { Meetup } from '../meetup';
+import './index.css';
+import { IMeetup } from '../../interfaces/meetup.interface';
+import { deleteMeetup } from '../../api/delete.meetup';
 
 export const MeetupList: React.FC<{meetups: IMeetup[], setMeetups: Function}> = ({meetups, setMeetups}) => {
 
-  const deleteMeetup = async (id: string) => {
-    const deletedMeetup = await window.fetch(
-      `http://localhost:3001/meetups/${id}`, {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${getToken()}`,
-        },
-      }
-    )
-
+  const removeMeetup = async (id: string) => {
+   const deletedMeetup = await deleteMeetup(id);
     if (deletedMeetup.status === 204) {
       setMeetups(meetups.filter((meetup) => meetup._id !== id));
     } else {
@@ -31,7 +23,7 @@ export const MeetupList: React.FC<{meetups: IMeetup[], setMeetups: Function}> = 
             key={meetup._id}
             meetup={meetup}
             deleteMeetup={() => {
-              deleteMeetup(meetup._id);
+              removeMeetup(meetup._id);
             }}
           />
         );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { IMeetup } from '../interfaces/meetup';
-import { getToken } from '../services/token';
-import '../styles/controlPanel.css';
+import { IMeetup } from '../../interfaces/meetup.interface';
+import { getToken } from '../../helpers/token';
+import './index.css';
 
 const search = async (title: string) => {
   const url = `http://localhost:3001/meetups${title ? `?search=${title}` : ''}`;

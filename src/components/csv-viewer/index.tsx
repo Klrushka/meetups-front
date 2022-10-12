@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/csv.css'
+import './index.css'
 
 export const Csv: React.FC<{csv: string}> = ({csv}) => {
   return (

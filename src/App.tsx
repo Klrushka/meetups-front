@@ -1,9 +1,9 @@
-import { LoginPage } from './pages/loginPage';
-import { MeetupPage } from './pages/meetupPage';
+import { LoginPage } from './pages/login-page';
+import { MeetupPage } from './pages/meetup-page';
 import { Routes, Route } from 'react-router-dom';
-import { RegistratePage } from './pages/registrationPage';
-import { CsvPage } from './pages/csvPage';
-import { PdfPage } from './pages/pdfPage';
+import { RegistratePage } from './pages/registration-page';
+import { CsvPage } from './pages/csv-page';
+import { PdfPage } from './pages/pdf-page';
 const setToken = (token: any) => {
   sessionStorage.setItem('token', JSON.stringify(token));
 };

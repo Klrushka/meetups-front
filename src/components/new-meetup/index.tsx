@@ -1,21 +1,7 @@
-import '../styles/newMeetup.css';
+import './index.css';
 import { useState } from 'react';
-import { CreateMeetupDto } from '../dto/createMeetupDto';
-import { getToken } from '../services/token';
-import { IMeetup } from '../interfaces/meetup';
-
-const createMeetup = async (meetup: CreateMeetupDto) => {
-  const createdMeetup = await window.fetch('http://localhost:3001/meetups', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${getToken()}`,
-    },
-    body: JSON.stringify(meetup),
-  });
-
-  return createdMeetup;
-};
+import { IMeetup } from '../../interfaces/meetup.interface';
+import { createMeetup } from '../../api/create.meetup';
 
 export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Function; setWindowShow: Function }> = ({
   setWindowShow,

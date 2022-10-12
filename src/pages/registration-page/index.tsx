@@ -1,19 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/form.css';
-import { IRegistrationCredentials } from '../interfaces/registrationCredentials';
+import './index.css';
 import { Link } from 'react-router-dom';
-
-const registrateUser = async (credentials: IRegistrationCredentials) => {
-  const token = await window.fetch('http://localhost:3000/auth/registration', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(credentials),
-  });
-
-  return token;
-};
+import { registrateUser } from '../../api/registrate.user.api';
 
 export const RegistratePage = () => {
   const [email, setEmail] = useState('');
