@@ -5,6 +5,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { loginUser } from '../../api/login.user.api';
 import { useNavigate } from 'react-router-dom';
+import { ILoginCredentials } from '../../interfaces/login.credentials.interface';
 
 export const LoginPage: React.FC<{ setToken: Function }> = ({ setToken }) => {
   const navigate = useNavigate();
@@ -12,6 +13,21 @@ export const LoginPage: React.FC<{ setToken: Function }> = ({ setToken }) => {
     password: yup.string().required('Required!'),
     email: yup.string().email('Enter a valid email').required('Required!'),
   });
+
+  const submitFormHandler = async (values: ILoginCredentials) => {
+    const { email, password } = values;
+    const token = await loginUser({
+      email,
+      password,
+    });
+
+    if (token.status >= 400) {
+      alert();
+    } else {
+      setToken(await token.json());
+      navigate('/meetups');
+    }
+  };
 
   return (
     <div className='formWrapper'>
@@ -25,21 +41,7 @@ export const LoginPage: React.FC<{ setToken: Function }> = ({ setToken }) => {
             email: '',
           }}
           validateOnBlur
-          onSubmit={async (values) => {
-            console.log(values);
-            const { email, password } = values;
-            const token = await loginUser({
-              email,
-              password,
-            });
-
-            if (token.status >= 400) {
-              alert();
-            } else {
-              setToken(await token.json());
-              navigate('/meetups');
-            }
-          }}
+          onSubmit={submitFormHandler}
           validationSchema={validationsSchema}
         >
           {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
