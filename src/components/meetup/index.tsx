@@ -1,6 +1,6 @@
 import React from 'react';
-import { formatDate } from '../../helpers/date';
-import { IMeetup } from '../../interfaces/meetup.interface';
+import { formatDate } from '@helpers/date';
+import { IMeetup } from '@interfaces/meetup.interface';
 import './index.css';
 
 export const Meetup: React.FunctionComponent<{ meetup: IMeetup; deleteMeetup: React.MouseEventHandler }> = ({

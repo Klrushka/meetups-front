@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchPdf } from '../../api/pdf.fetch';
+import { fetchPdf } from '@api/pdf.fetch.api';
 import './index.css'
 
 export const Pdf = () => {

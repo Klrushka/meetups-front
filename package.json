@@ -53,6 +53,7 @@
   "devDependencies": {
     "@types/base-64": "^1.0.0",
     "@types/react-pdf": "^5.7.2",
-    "dotenv-webpack": "^8.0.1"
+    "dotenv-webpack": "^8.0.1",
+    "tsconfig-paths-webpack-plugin": "^4.0.0"
   }
 }

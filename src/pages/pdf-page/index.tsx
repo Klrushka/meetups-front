@@ -1,5 +1,5 @@
-import { Navbar } from '../../components/navbar'
-import { Pdf } from '../../components/pdf-viewer'
+import { Navbar } from '@components/navbar'
+import { Pdf } from '@components/pdf-viewer'
 
 export const PdfPage = () => {
   return (

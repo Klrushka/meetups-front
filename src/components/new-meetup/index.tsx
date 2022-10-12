@@ -1,7 +1,7 @@
 import './index.css';
 import { useState } from 'react';
-import { IMeetup } from '../../interfaces/meetup.interface';
-import { createMeetup } from '../../api/create.meetup';
+import { IMeetup } from '@interfaces/meetup.interface';
+import { createMeetup } from '@api/create.meetup.api';
 
 export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Function; setWindowShow: Function }> = ({
   setWindowShow,

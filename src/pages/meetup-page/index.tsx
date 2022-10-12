@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import { ControlPanel } from '../../components/control-panel';
-import { MeetupList } from '../../components/meetups-list';
-import { Navbar } from '../../components/navbar';
-import { NewMeetupWindow } from '../../components/new-meetup';
-import { getToken } from '../../helpers/token';
+import { ControlPanel } from '@components/control-panel';
+import { MeetupList } from '@components/meetups-list';
+import { Navbar } from '@components/navbar';
+import { NewMeetupWindow } from '@components/new-meetup';
+import { getToken } from '@helpers/token';
 import { NotAuthPage } from '../not-auth-page';
-import '../../components/meetups-list'
-import { IMeetup } from '../../interfaces/meetup.interface';
-import { data } from '../../mock/data';
+import '@components/meetups-list'
+import { IMeetup } from '@interfaces/meetup.interface';
+import { data } from '@mock/data';
 import './index.css'
 
 

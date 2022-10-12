@@ -1,18 +1,8 @@
 import React from 'react';
-import { IMeetup } from '../../interfaces/meetup.interface';
-import { getToken } from '../../helpers/token';
+import { search } from '@api/search.meetup.api';
+import { IMeetup } from '@interfaces/meetup.interface';
 import './index.css';
 
-const search = async (title: string) => {
-  const url = `http://localhost:3001/meetups${title ? `?search=${title}` : ''}`;
-  const searchResult = await window.fetch(url, {
-    headers: {
-      Authorization: `Bearer ${getToken()}`,
-    },
-  });
-
-  return searchResult;
-};
 
 export const ControlPanel: React.FC<{ setShowModal: Function; meetups: IMeetup[]; setMeetups: Function }> = ({
   setShowModal,

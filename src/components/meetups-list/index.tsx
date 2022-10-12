@@ -1,7 +1,7 @@
 import { Meetup } from '../meetup';
 import './index.css';
-import { IMeetup } from '../../interfaces/meetup.interface';
-import { deleteMeetup } from '../../api/delete.meetup';
+import { IMeetup } from '@interfaces/meetup.interface';
+import { deleteMeetup } from '@api/delete.meetup.api';
 
 export const MeetupList: React.FC<{meetups: IMeetup[], setMeetups: Function}> = ({meetups, setMeetups}) => {
 

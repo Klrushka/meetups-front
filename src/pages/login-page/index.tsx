@@ -1,11 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './index.css';
-import { Formik } from 'formik';
 import * as yup from 'yup';
-import { loginUser } from '../../api/login.user.api';
+import PropTypes from 'prop-types';
+import { loginUser } from '@api';
+import { ILoginCredentials } from '@interfaces';
+import { Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-import { ILoginCredentials } from '../../interfaces/login.credentials.interface';
 
 export const LoginPage: React.FC<{ setToken: Function }> = ({ setToken }) => {
   const navigate = useNavigate();

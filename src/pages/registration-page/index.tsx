@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './index.css';
-import { registrateUser } from '../../api/registrate.user.api';
+import { registrateUser } from '@api/registrate.user.api';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { IRegistrationCredentials } from '../../interfaces/registration.credentials.interface';
+import { IRegistrationCredentials } from '@interfaces/registration.credentials.interface';
 import { useNavigate } from 'react-router-dom';
 
 export const RegistratePage = () => {
