@@ -30,6 +30,8 @@
       "@mock/*": ["./src/mock/*"],
       "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],
+      "@styled": ["./src/styled"],
+      "@styled/*": ["./src/styled/*"],
     }
     
   },

@@ -1,4 +1,3 @@
-import './index.css';
 import { useState } from 'react';
 import { IMeetup } from '@interfaces/meetup.interface';
 import { createMeetup } from '@mock/backend/create.meetup.mock';
@@ -97,8 +96,8 @@ export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Functio
             {showCreatedMessage && <p>Meetup Created!</p>}
           </label>
         </form>
-        <hr />
-        <hr />
+        <br />
+        <br />
       </div>
     </div>
   );

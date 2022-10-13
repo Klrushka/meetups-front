@@ -1,9 +1,8 @@
 import React from 'react';
 import { IMeetup } from '@interfaces/meetup.interface';
-import './index.css';
 import { searchHandler } from '@mock/backend';
+import { Button, ButtonBlock, ControlPanelWrapper, Input, InputWrapper, Span } from '@styled';
 // import { searchHandler } from '@helpers/search.handler';
-
 
 export const ControlPanel: React.FC<{ setShowModal: Function; meetups: IMeetup[]; setMeetups: Function }> = ({
   setShowModal,
@@ -11,19 +10,22 @@ export const ControlPanel: React.FC<{ setShowModal: Function; meetups: IMeetup[]
   setMeetups,
 }) => {
   return (
-    <div>
-      <div className='controlPanel'>
-        <input
-          onChange={searchHandler(setMeetups)}
-        />
-        <button
-          onClick={(event) => {
-            setShowModal(true);
-          }}
-        >
-          create new meetup
-        </button>
+    <ControlPanelWrapper>
+      <div>
+        <ButtonBlock>
+          <Span> Your Meetups</Span>
+          <Button
+            onClick={(event) => {
+              setShowModal(true);
+            }}
+          >
+            New
+          </Button>
+        </ButtonBlock>
+        <InputWrapper>
+          <Input onChange={searchHandler(setMeetups)} />
+        </InputWrapper>
       </div>
-    </div>
+    </ControlPanelWrapper>
   );
 };

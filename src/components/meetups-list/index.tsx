@@ -1,7 +1,7 @@
 import { Meetup } from '../meetup';
-import './index.css';
 import { IMeetup } from '@interfaces/meetup.interface';
 import { deleteMeetup } from '@mock/backend';
+import { SectionWrapper } from '@styled';
 // import { deleteMeetup } from '@api/delete.meetup.api';
 
 export const MeetupList: React.FC<{meetups: IMeetup[], setMeetups: Function}> = ({meetups, setMeetups}) => {
@@ -17,7 +17,7 @@ export const MeetupList: React.FC<{meetups: IMeetup[], setMeetups: Function}> = 
 
 
   return (
-    <section className='meetup-list'>
+    <SectionWrapper >
       {meetups.map((meetup) => {
         return (
           <Meetup
@@ -29,6 +29,6 @@ export const MeetupList: React.FC<{meetups: IMeetup[], setMeetups: Function}> = 
           />
         );
       })}
-    </section>
+    </SectionWrapper>
   );
 };

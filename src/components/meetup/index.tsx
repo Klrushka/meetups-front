@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatDate } from '@helpers/date';
 import { IMeetup } from '@interfaces/meetup.interface';
-import './index.css';
+import { MeetupWrapper } from '@styled/meetup';
 
 export const Meetup: React.FunctionComponent<{ meetup: IMeetup; deleteMeetup: React.MouseEventHandler }> = ({
   meetup,
@@ -9,8 +9,8 @@ export const Meetup: React.FunctionComponent<{ meetup: IMeetup; deleteMeetup: Re
 }) => {
   const locationUrl = `http://www.google.com/maps/place/${meetup.location.coordinates.join(',')}`;
   return (
-    <div className='meetup'>
-      <div className='location'>
+    <MeetupWrapper>
+      <div>
         <p>
           <img width='20' height='' src='pin.png' alt='pin' />
           <a href={locationUrl}>Map</a>
@@ -26,6 +26,6 @@ export const Meetup: React.FunctionComponent<{ meetup: IMeetup; deleteMeetup: Re
         })}
       </ul>
       <button onClick={deleteMeetup}>Delete</button>
-    </div>
+    </MeetupWrapper>
   );
 };
