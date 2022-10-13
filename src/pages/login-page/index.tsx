@@ -5,6 +5,7 @@ import { ILoginCredentials } from '@interfaces';
 import { Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '@mock/backend';
+import './index.css'
 
 export const LoginPage: React.FC<{ setToken: Function }> = ({ setToken }) => {
   const navigate = useNavigate();
