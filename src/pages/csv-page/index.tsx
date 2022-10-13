@@ -1,5 +1,6 @@
-import { getCsvData } from '@api'
+// import { getCsvData } from '@api'
 import { Navbar, Csv } from '@components'
+import { getCsvData } from '@mock/backend'
 import { useState, useEffect } from 'react'
 
 

@@ -1,9 +1,10 @@
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
-import { loginUser } from '@api';
+// import { loginUser } from '@api';
 import { ILoginCredentials } from '@interfaces';
 import { Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
+import { loginUser } from '@mock/backend';
 
 export const LoginPage: React.FC<{ setToken: Function }> = ({ setToken }) => {
   const navigate = useNavigate();

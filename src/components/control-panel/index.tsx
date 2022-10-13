@@ -1,7 +1,8 @@
 import React from 'react';
-import { search } from '@api/search.meetup.api';
 import { IMeetup } from '@interfaces/meetup.interface';
 import './index.css';
+import { searchHandler } from '@mock/backend';
+// import { searchHandler } from '@helpers/search.handler';
 
 
 export const ControlPanel: React.FC<{ setShowModal: Function; meetups: IMeetup[]; setMeetups: Function }> = ({
@@ -13,15 +14,7 @@ export const ControlPanel: React.FC<{ setShowModal: Function; meetups: IMeetup[]
     <div>
       <div className='controlPanel'>
         <input
-          onChange={async (event) => {
-            const result = await search(event.target.value).then(result => result.json());
-            if (result.body) {
-              const findedMeetups = result.body.hits.hits.map((item) => item._source._doc);
-              setMeetups(findedMeetups);
-            } else {
-              setMeetups(result);
-            }
-          }}
+          onChange={searchHandler(setMeetups)}
         />
         <button
           onClick={(event) => {
