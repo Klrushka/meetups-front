@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatDate } from '@helpers/date';
 import { IMeetup } from '@interfaces/meetup.interface';
-import { MeetupWrapper } from '@styled/meetup';
+import { DateMap, HeadWrapper, MeetupWrapper, Tags, Title, Location, Link, ListItem, Button } from '@styled/meetup';
 
 export const Meetup: React.FunctionComponent<{ meetup: IMeetup; deleteMeetup: React.MouseEventHandler }> = ({
   meetup,
@@ -10,22 +10,25 @@ export const Meetup: React.FunctionComponent<{ meetup: IMeetup; deleteMeetup: Re
   const locationUrl = `http://www.google.com/maps/place/${meetup.location.coordinates.join(',')}`;
   return (
     <MeetupWrapper>
-      <div>
-        <p>
-          <img width='20' height='' src='pin.png' alt='pin' />
-          <a href={locationUrl}>Map</a>
-        </p>
-        <p className='dueTime'>{formatDate(meetup.dueTime)}</p>
-      </div>
-      <p className='title'>{meetup.title}</p>
+      <HeadWrapper>
+        <Title className='title'>{meetup.title}</Title>
+        <DateMap>
+          <Location>
+            <img width='20' height='' src='pin.png' alt='pin' />
+            <Link href={locationUrl}>Map</Link>
+          </Location>
+
+          <p className='dueTime'>{formatDate(meetup.dueTime)}</p>
+        </DateMap>
+      </HeadWrapper>
       <p className='description'>{meetup.description}</p>
 
-      <ul className='tags'>
+      <Tags>
         {meetup.tags.map((tag) => {
-          return <li>{tag}</li>;
+          return <ListItem>{tag}</ListItem>;
         })}
-      </ul>
-      <button onClick={deleteMeetup}>Delete</button>
+      </Tags>
+      <Button onClick={deleteMeetup}>Delete</Button>
     </MeetupWrapper>
   );
 };

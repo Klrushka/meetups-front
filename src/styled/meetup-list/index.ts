@@ -7,6 +7,8 @@ export const MeetupListWrapper = styled.div`
   height: 100vh;
   color: white;
   display: flex;
+  overflow-x: hidden;
+  
 `
 
 export const SectionWrapper = styled.section`

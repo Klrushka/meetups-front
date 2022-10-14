@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { IMeetup } from '@interfaces/meetup.interface';
-import { createMeetup } from '@mock/backend/create.meetup.mock';
+
+import { CreateButton, CreateInput, CreateTitle, Form, Label, NewMeetupWrapper } from '@styled';
+import { createMeetup } from '@mock/backend';
+import { IMeetup } from '@interfaces';
 // import { createMeetup } from '@api/create.meetup.api';
 
 export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Function; setWindowShow: Function }> = ({
@@ -30,75 +32,65 @@ export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Functio
     setShowCreatedMessage(true);
     meetups.push(await createdMeetup.json());
     setMeetups(meetups);
+    setWindowShow(false);
   };
 
   return (
-    <div className='newMeetupWrapper'>
-      <p>New Meetup</p>
-      <div className='newMeetup'>
-        <div
-          className='cross'
-          onClick={(event) => {
-            setWindowShow(false);
-          }}
-        >
-          <img src='cross.png' alt='cross' width='45px' height='45px' />
-        </div>
-        <form className='form' onSubmit={handleSubmit}>
-          <label>
-            <p>Title</p>
-            <input
-              type='text'
-              onChange={(event) => {
-                setTitle(event.target.value);
-              }}
-            />
-          </label>
-          <label>
-            <p>Description</p>
-            <input
-              type='text'
-              onChange={(event) => {
-                setDescription(event.target.value);
-              }}
-            />
-          </label>
-          <label>
-            <p>Tags</p>
-            <input
-              type='text'
-              onChange={(event) => {
-                setTags(event.target.value.split(' '));
-              }}
-            />
-          </label>
-          <label>
-            <p>Due time</p>
-            <input
-              type='datetime-local'
-              onChange={(event) => {
-                setDueTime(new Date(event.target.value));
-              }}
-            />
-          </label>
-          <label>
-            <p>Location</p>
-            <input
-              type='text'
-              onChange={(event) => {
-                setLocation({ type: 'Point', coordinates: event.target.value.split(' ').map((item) => +item) });
-              }}
-            />
-          </label>
-          <label>
-            <p></p>
-            <button type='submit'> Create!</button>
-            {showCreatedMessage && <p>Meetup Created!</p>}
-          </label>
-        </form>
-        <br />
-        <br />
-      </div>
-    </div>
+    <NewMeetupWrapper>
+      <CreateTitle>New Meetup</CreateTitle>
+      <Form className='form' onSubmit={handleSubmit}>
+        <Label>
+          <p>Title</p>
+          <CreateInput
+            type='text'
+            onChange={(event) => {
+              setTitle(event.target.value);
+            }}
+          />
+        </Label>
+        <Label>
+          <p>Description</p>
+          <CreateInput
+            type='text'
+            onChange={(event) => {
+              setDescription(event.target.value);
+            }}
+          />
+        </Label>
+        <Label>
+          <p>Tags</p>
+          <CreateInput
+            type='text'
+            onChange={(event) => {
+              setTags(event.target.value.split(' '));
+            }}
+          />
+        </Label>
+        <Label>
+          <p>Location</p>
+          <CreateInput
+            type='text'
+            onChange={(event) => {
+              setLocation({ type: 'Point', coordinates: event.target.value.split(' ').map((item) => +item) });
+            }}
+          />
+        </Label>
+        <Label>
+          <p>Due time</p>
+          <CreateInput
+            type='datetime-local'
+            onChange={(event) => {
+              setDueTime(new Date(event.target.value));
+            }}
+          />
+        </Label>
+
+        <Label>
+          <p></p>
+          <CreateButton type='submit'> Create!</CreateButton>
+          {showCreatedMessage && <p>Meetup Created!</p>}
+        </Label>
+      </Form>
+    </NewMeetupWrapper>
   );
 };

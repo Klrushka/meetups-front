@@ -19,7 +19,7 @@ export const MeetupPage = () => {
 
   useEffect(() => {
     setMeetups(data);
-    fetchData(setMeetups);
+    // fetchData(setMeetups);
   }, []);
 
   if (token) {
