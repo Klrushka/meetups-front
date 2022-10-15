@@ -1,6 +1,8 @@
 import { getToken } from '@helpers';
 
-export const fetchPdf = async (setPdfLink: Function) => {
+export const fetchPdf = async (
+  setPdfLink: React.Dispatch<React.SetStateAction<string>>
+) => {
   const token = `Bearer ${getToken()}`;
   const url = process.env.REACT_APP_MEETUPS_PDF;
   await window
@@ -10,10 +12,10 @@ export const fetchPdf = async (setPdfLink: Function) => {
         Authorization: token,
       },
     })
-    .then((res) => {
+    .then(res => {
       res.blob().then(blob => {
         const fileUrl = window.URL.createObjectURL(blob);
-        setPdfLink(fileUrl)
-      })
+        setPdfLink(fileUrl);
+      });
     });
 };

@@ -5,9 +5,6 @@ const MeetupPageWrapper = styled.div`
   margin: 0;
   padding: 0;
   display: block;
-`
+`;
 
-
-export {
-  MeetupPageWrapper,
-}
+export { MeetupPageWrapper };

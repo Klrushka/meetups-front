@@ -1,18 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
-
 const NavbarWrapper = styled.nav`
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   width: 100%;
   background-color: #444544;
-`
+`;
 
-const NavbarList = styled.ul`
-  
-`
+const NavbarList = styled.ul``;
 
 const NavbarItem = styled.li`
   display: inline-block;
@@ -23,17 +19,11 @@ const NavbarItem = styled.li`
   &:hover {
     transform: scale(1.05);
   }
- 
-`
+`;
 
 const LinkWrapper = styled(Link)`
   text-decoration: none;
   color: white;
-` 
+`;
 
-export {
-  NavbarList,
-  NavbarWrapper,
-  NavbarItem,
-  LinkWrapper,
-}
+export { NavbarList, NavbarWrapper, NavbarItem, LinkWrapper };

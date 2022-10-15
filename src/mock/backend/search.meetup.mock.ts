@@ -1,6 +1,9 @@
+import { IMeetup } from '@interfaces';
 import { data } from '@mock/data';
 
-export const searchHandler = function (setMeetups: Function) {
+export const searchHandler = function (
+  setMeetups: React.Dispatch<React.SetStateAction<IMeetup[]>>
+) {
   return async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value) {
       const searchData = data
@@ -11,5 +14,5 @@ export const searchHandler = function (setMeetups: Function) {
     } else {
       setMeetups(data);
     }
-  }
-}
+  };
+};

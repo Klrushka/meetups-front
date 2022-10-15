@@ -1,9 +1,9 @@
 import { ILocation } from './location.interface';
 
-export class ICreateMeetup {
+export interface ICreateMeetup {
   title: string;
   description?: string;
   tags: string[];
   dueTime: Date;
-  location: ILocation
+  location: ILocation;
 }

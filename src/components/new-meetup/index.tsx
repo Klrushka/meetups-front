@@ -1,15 +1,23 @@
+import React from 'react';
 import { useState } from 'react';
-
-import { CreateButton, CreateInput, CreateTitle, Form, Label, NewMeetupWrapper } from '@styled';
-import { createMeetup } from '@mock/backend';
 import { IMeetup } from '@interfaces';
+import { createMeetup } from '@mock/backend';
+import {
+  CreateButton,
+  CreateInput,
+  CreateTitle,
+  Form,
+  Label,
+  NewMeetupWrapper,
+} from '@styled';
+
 // import { createMeetup } from '@api/create.meetup.api';
 
-export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Function; setWindowShow: Function }> = ({
-  setWindowShow,
-  meetups,
-  setMeetups,
-}) => {
+export const NewMeetupWindow: React.FC<{
+  meetups: IMeetup[];
+  setMeetups: React.Dispatch<React.SetStateAction<IMeetup[]>>;
+  setWindowShow: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ setWindowShow, meetups, setMeetups }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [tags, setTags] = useState(['']);
@@ -38,12 +46,12 @@ export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Functio
   return (
     <NewMeetupWrapper>
       <CreateTitle>New Meetup</CreateTitle>
-      <Form className='form' onSubmit={handleSubmit}>
+      <Form className="form" onSubmit={handleSubmit}>
         <Label>
           <p>Title</p>
           <CreateInput
-            type='text'
-            onChange={(event) => {
+            type="text"
+            onChange={event => {
               setTitle(event.target.value);
             }}
           />
@@ -51,8 +59,8 @@ export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Functio
         <Label>
           <p>Description</p>
           <CreateInput
-            type='text'
-            onChange={(event) => {
+            type="text"
+            onChange={event => {
               setDescription(event.target.value);
             }}
           />
@@ -60,8 +68,8 @@ export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Functio
         <Label>
           <p>Tags</p>
           <CreateInput
-            type='text'
-            onChange={(event) => {
+            type="text"
+            onChange={event => {
               setTags(event.target.value.split(' '));
             }}
           />
@@ -69,25 +77,27 @@ export const NewMeetupWindow: React.FC<{ meetups: IMeetup[]; setMeetups: Functio
         <Label>
           <p>Location</p>
           <CreateInput
-            type='text'
-            onChange={(event) => {
-              setLocation({ type: 'Point', coordinates: event.target.value.split(' ').map((item) => +item) });
+            type="text"
+            onChange={event => {
+              setLocation({
+                type: 'Point',
+                coordinates: event.target.value.split(' ').map(item => +item),
+              });
             }}
           />
         </Label>
         <Label>
           <p>Due time</p>
           <CreateInput
-            type='datetime-local'
-            onChange={(event) => {
+            type="datetime-local"
+            onChange={event => {
               setDueTime(new Date(event.target.value));
             }}
           />
         </Label>
 
         <Label>
-          <p></p>
-          <CreateButton type='submit'> Create!</CreateButton>
+          <CreateButton type="submit"> Create!</CreateButton>
           {showCreatedMessage && <p>Meetup Created!</p>}
         </Label>
       </Form>

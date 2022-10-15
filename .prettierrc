@@ -1,0 +1,28 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "printWidth": 80,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "importOrder": [
+    "^\\w+",
+    "^@api",
+    "^@api/(.*)$",
+    "^@components",
+    "^@components/(.*)$",
+    "^@helpers",
+    "^@helpers/(.*)$",
+    "^@interfaces$",
+    "^@interfaces/(.*)$",   
+    "^@mock",
+    "^@mock/(.*)$",
+    "^@styled",
+    "^@styled/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^[./]"
+  ],
+  "importOrderSortSpecifiers": true
+}

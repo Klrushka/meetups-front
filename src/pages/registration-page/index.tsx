@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import './index.css';
 // import { registrateUser } from '@api/registrate.user.api';
 import { Formik } from 'formik';
-import * as yup from 'yup';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registrateUser } from '@mock/backend';
+import * as yup from 'yup';
 import { IRegistrationCredentials } from '@interfaces';
+import { registrateUser } from '@mock/backend';
+import './index.css';
 
 export const RegistratePage = () => {
   const [showMailSendedMessage, setShowMailSendedMessage] = useState(false);
@@ -38,13 +38,13 @@ export const RegistratePage = () => {
   };
 
   return (
-    <div className='formWrapper'>
-      <div className='imgMeetup'>
-        <img src='m.png' alt='123' />
+    <div className="formWrapper">
+      <div className="imgMeetup">
+        <img src="m.png" alt="123" />
       </div>
 
-      <div className='Form'>
-        <div className='formInner'>
+      <div className="Form">
+        <div className="formInner">
           <Formik
             initialValues={{
               name: '',
@@ -57,7 +57,16 @@ export const RegistratePage = () => {
             onSubmit={submitFormHandler}
             validationSchema={validationsSchema}
           >
-            {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              isValid,
+              handleSubmit,
+              dirty,
+            }) => (
               <div className={`from`}>
                 <p>
                   <label htmlFor={`name`}>Name</label>
@@ -71,7 +80,9 @@ export const RegistratePage = () => {
                     value={values.name}
                   />
                 </p>
-                {touched.name && errors.name && <p className={'error'}>{errors.name}</p>}
+                {touched.name && errors.name && (
+                  <p className={'error'}>{errors.name}</p>
+                )}
                 <p>
                   <label htmlFor={`surname`}>Surname</label>
                   <br />
@@ -84,7 +95,9 @@ export const RegistratePage = () => {
                     value={values.surname}
                   />
                 </p>
-                {touched.surname && errors.surname && <p className={'error'}>{errors.surname}</p>}
+                {touched.surname && errors.surname && (
+                  <p className={'error'}>{errors.surname}</p>
+                )}
                 <p>
                   <label htmlFor={`surname`}>Password</label>
                   <br />
@@ -97,7 +110,9 @@ export const RegistratePage = () => {
                     value={values.password}
                   />
                 </p>
-                {touched.password && errors.password && <p className={'error'}>{errors.password}</p>}
+                {touched.password && errors.password && (
+                  <p className={'error'}>{errors.password}</p>
+                )}
 
                 <p>
                   <label htmlFor={`email`}>Email</label>
@@ -111,7 +126,9 @@ export const RegistratePage = () => {
                     value={values.email}
                   />
                 </p>
-                {touched.email && errors.email && <p className={'error'}>{errors.email}</p>}
+                {touched.email && errors.email && (
+                  <p className={'error'}>{errors.email}</p>
+                )}
 
                 <p>
                   <label htmlFor={`telephone`}>Telephone</label>
@@ -125,11 +142,15 @@ export const RegistratePage = () => {
                     value={values.telephone}
                   />
                 </p>
-                {touched.telephone && errors.telephone && <p className={'error'}>{errors.telephone}</p>}
+                {touched.telephone && errors.telephone && (
+                  <p className={'error'}>{errors.telephone}</p>
+                )}
 
                 <button
                   disabled={!isValid || !dirty}
-                  onClick={handleSubmit as unknown as React.MouseEventHandler<HTMLButtonElement>}
+                  onClick={
+                    handleSubmit as unknown as React.MouseEventHandler<HTMLButtonElement>
+                  }
                   type={`submit`}
                 >
                   Sign Up
@@ -137,7 +158,9 @@ export const RegistratePage = () => {
               </div>
             )}
           </Formik>
-          {showMailSendedMessage && <p>Please check your Email and verify it!</p>}
+          {showMailSendedMessage && (
+            <p>Please check your Email and verify it!</p>
+          )}
         </div>
       </div>
     </div>

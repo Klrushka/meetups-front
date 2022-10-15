@@ -3,12 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1D2D44;
-  box-shadow: -12px 10px #3E5C76;
+  background-color: #1d2d44;
+  box-shadow: -12px 10px #3e5c76;
   border-radius: 1rem;
   padding: 2rem;
-  transition: transform .3s; 
- 
+  transition: transform 0.3s;
 }
 
 .pdfLink:hover {

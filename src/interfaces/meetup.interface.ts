@@ -6,7 +6,7 @@ export interface IMeetup {
   tags: string[];
   userId: string;
   dueTime: string;
-  location: ILocation
+  location: ILocation;
   _id: string;
   createdAt: string;
   updatedAt: string;

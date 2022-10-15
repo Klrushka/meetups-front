@@ -2,7 +2,7 @@ import { getToken } from '@helpers';
 import { ICreateMeetup } from '@interfaces';
 
 export const createMeetup = async (meetup: ICreateMeetup) => {
-  const token = `Bearer ${getToken()}`
+  const token = `Bearer ${getToken()}`;
   const createdMeetup = await window.fetch(process.env.REACT_APP_MEETUPS, {
     method: 'POST',
     headers: {

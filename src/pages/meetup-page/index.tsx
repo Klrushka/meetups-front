@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react';
-import { ControlPanel } from '@components/control-panel';
-import { MeetupList } from '@components/meetups-list';
-import { Navbar } from '@components/navbar';
-import { NewMeetupWindow } from '@components/new-meetup';
-import { getToken } from '@helpers/token';
-import { NotAuthPage } from '../not-auth-page';
-import '@components/meetups-list';
-import { IMeetup } from '@interfaces/meetup.interface';
-import { data } from '@mock/data';
-import { fetchData } from '@api';
-import { MainPanel, MeetupInfo, MeetupListWrapper, MeetupPageWrapper } from '@styled';
+import React, { useEffect, useState } from 'react';
+import { ControlPanel, MeetupList, Navbar, NewMeetupWindow } from '@components';
+import { getToken } from '@helpers';
+import { IMeetup } from '@interfaces';
+import { data } from '@mock';
+// import { fetchData } from '@api';
+import {
+  MainPanel,
+  MeetupInfo,
+  MeetupListWrapper,
+  MeetupPageWrapper,
+} from '@styled';
 import { Main } from '@styled/main';
+import { NotAuthPage } from '../not-auth-page';
 
 export const MeetupPage = () => {
   const token = getToken();
@@ -28,13 +29,23 @@ export const MeetupPage = () => {
         <Navbar />
         <Main>
           <MainPanel>
-            <ControlPanel setShowModal={setShowModal} meetups={meetups} setMeetups={setMeetups} />
+            <ControlPanel
+              setShowModal={setShowModal}
+              meetups={meetups}
+              setMeetups={setMeetups}
+            />
             <MeetupListWrapper>
               <MeetupList meetups={meetups} setMeetups={setMeetups} />
             </MeetupListWrapper>
           </MainPanel>
           <MeetupInfo>
-          {showModal && <NewMeetupWindow setWindowShow={setShowModal}  meetups={meetups} setMeetups={setMeetups}/>}
+            {showModal && (
+              <NewMeetupWindow
+                setWindowShow={setShowModal}
+                meetups={meetups}
+                setMeetups={setMeetups}
+              />
+            )}
           </MeetupInfo>
         </Main>
       </MeetupPageWrapper>
