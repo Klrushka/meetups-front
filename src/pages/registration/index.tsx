@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { IRegistrationCredentials } from '@interfaces';
 import { registrateUser } from '@mock/backend';
-import './index.css';
+import { Button, EmailCheckText, Error, Form, FormInner, FormWrapper, ImgWrapper, Input, Label } from './style';
 
 export const RegistratePage = () => {
   const [showMailSendedMessage, setShowMailSendedMessage] = useState(false);
@@ -38,13 +38,13 @@ export const RegistratePage = () => {
   };
 
   return (
-    <div className="formWrapper">
-      <div className="imgMeetup">
+    <FormWrapper>
+      <ImgWrapper>
         <img src="m.png" alt="123" />
-      </div>
+      </ImgWrapper>
 
-      <div className="Form">
-        <div className="formInner">
+      <Form>
+        <FormInner>
           <Formik
             initialValues={{
               name: '',
@@ -67,12 +67,11 @@ export const RegistratePage = () => {
               handleSubmit,
               dirty,
             }) => (
-              <div className={`from`}>
+              <Form>
                 <p>
-                  <label htmlFor={`name`}>Name</label>
+                  <Label htmlFor={`name`}>Name</Label>
                   <br />
-                  <input
-                    className={'input'}
+                  <Input
                     type={`text`}
                     name={`name`}
                     onChange={handleChange}
@@ -81,13 +80,12 @@ export const RegistratePage = () => {
                   />
                 </p>
                 {touched.name && errors.name && (
-                  <p className={'error'}>{errors.name}</p>
+                  <Error className={'error'}>{errors.name}</Error>
                 )}
                 <p>
-                  <label htmlFor={`surname`}>Surname</label>
+                  <Label htmlFor={`surname`}>Surname</Label>
                   <br />
-                  <input
-                    className={'input'}
+                  <Input
                     type={`text`}
                     name={`surname`}
                     onChange={handleChange}
@@ -96,12 +94,12 @@ export const RegistratePage = () => {
                   />
                 </p>
                 {touched.surname && errors.surname && (
-                  <p className={'error'}>{errors.surname}</p>
+                  <Error className={'error'}>{errors.surname}</Error>
                 )}
                 <p>
-                  <label htmlFor={`surname`}>Password</label>
+                  <Label htmlFor={`surname`}>Password</Label>
                   <br />
-                  <input
+                  <Input
                     className={'input'}
                     type={`password`}
                     name={`password`}
@@ -111,13 +109,13 @@ export const RegistratePage = () => {
                   />
                 </p>
                 {touched.password && errors.password && (
-                  <p className={'error'}>{errors.password}</p>
+                  <Error className={'error'}>{errors.password}</Error>
                 )}
 
                 <p>
-                  <label htmlFor={`email`}>Email</label>
+                  <Label htmlFor={`email`}>Email</Label>
                   <br />
-                  <input
+                  <Input
                     className={'input'}
                     type={`email`}
                     name={`email`}
@@ -127,14 +125,13 @@ export const RegistratePage = () => {
                   />
                 </p>
                 {touched.email && errors.email && (
-                  <p className={'error'}>{errors.email}</p>
+                  <Error className={'error'}>{errors.email}</Error>
                 )}
 
                 <p>
-                  <label htmlFor={`telephone`}>Telephone</label>
+                  <Label htmlFor={`telephone`}>Telephone</Label>
                   <br />
-                  <input
-                    className={'input'}
+                  <Input
                     type={`text`}
                     name={`telephone`}
                     onChange={handleChange}
@@ -143,10 +140,10 @@ export const RegistratePage = () => {
                   />
                 </p>
                 {touched.telephone && errors.telephone && (
-                  <p className={'error'}>{errors.telephone}</p>
+                  <Error className={'error'}>{errors.telephone}</Error>
                 )}
 
-                <button
+                <Button
                   disabled={!isValid || !dirty}
                   onClick={
                     handleSubmit as unknown as React.MouseEventHandler<HTMLButtonElement>
@@ -154,15 +151,15 @@ export const RegistratePage = () => {
                   type={`submit`}
                 >
                   Sign Up
-                </button>
-              </div>
+                </Button>
+              </Form>
             )}
           </Formik>
           {showMailSendedMessage && (
-            <p>Please check your Email and verify it!</p>
+            <EmailCheckText>Please check your Email and verify it!</EmailCheckText>
           )}
-        </div>
-      </div>
-    </div>
+        </FormInner>
+      </Form>
+    </FormWrapper>
   );
 };

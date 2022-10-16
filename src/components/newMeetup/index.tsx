@@ -45,8 +45,8 @@ export const NewMeetupWindow: React.FC<{
 
   return (
     <NewMeetupWrapper>
-      <CreateTitle>New Meetup</CreateTitle>
       <Form className="form" onSubmit={handleSubmit}>
+      <CreateTitle>New Meetup</CreateTitle>
         <Label>
           <p>Title</p>
           <CreateInput

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const MeetupWrapper = styled.div`
   word-break: break-all;
   background-color: white;
-  padding: 1rem;
-  margin: 2rem;
+  padding: 30px;
+  margin: 25px;
   color: black;
   border-style: solid;
   border-width: 0.9px;
@@ -39,7 +39,7 @@ export const Title = styled.p`
 export const DateMap = styled.div``;
 
 export const Location = styled.div`
-  padding-left: 8rem;
+  padding-left: 130px;
   transition: 0.5s;
 
   &: hover {
@@ -55,9 +55,9 @@ export const Link = styled.a`
 export const ListItem = styled.li`
   word-break: keep-all;
   word-break: none;
-  margin: 0.5rem 2rem 0.5rem 0;
+  margin: 10px 20px 10px 0;
   background: #cccccc;
-  padding: 0.2rem 2rem 0.2rem 2rem;
+  padding: 5px 40px 5px 40px;
   border-radius: 5px;
   border-style: solid;
   border-width: 0.9px;

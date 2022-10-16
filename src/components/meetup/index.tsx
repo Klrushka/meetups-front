@@ -37,7 +37,11 @@ export const Meetup: React.FunctionComponent<{
 
       <Tags>
         {tags.map(tag => {
-          return <ListItem key={new Date().toString()}>{tag}</ListItem>;
+          return (
+            <ListItem key={Math.random().toString(36).substring(2)}>
+              {tag}
+            </ListItem>
+          );
         })}
       </Tags>
       <Button onClick={deleteMeetup}>Delete</Button>

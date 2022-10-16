@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const NewMeetupWrapper = styled.div`
   background-color: white;
-  padding: 1rem;
-  margin: 13rem 2rem 2rem 2rem;
+  padding: 10px;
+  margin-top: 100px;
   color: black;
   border-style: solid;
   border-width: 0.9px;
@@ -58,7 +58,7 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 7rem;
+  padding: 100px;
 `;
 
 export const Label = styled.label`

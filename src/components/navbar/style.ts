@@ -12,7 +12,7 @@ export const NavbarList = styled.ul``;
 
 export const NavbarItem = styled.li`
   display: inline-block;
-  padding: 0.05rem 1rem 0.05rem 1rem;
+  padding: 1px 10px 1px 10px;
   text-decoration: none;
   transition: 0.1s;
   &:hover {

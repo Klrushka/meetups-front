@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
-const ControlPanelWrapper = styled.div``;
+export const ControlPanelWrapper = styled.div``;
 
-const ButtonBlock = styled.div`
+export const ButtonBlock = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 2rem 6rem 1rem 6rem;
+  padding: 20px 100px 10px 100px;
 `;
 
-const Span = styled.span`
+export const Span = styled.span`
   font-size: x-large;
 `;
-const Button = styled.button`
+export const Button = styled.button`
   background: #00be23;
   color: white;
   border-radius: 5px;
-  padding: 0.5rem 3rem;
+  padding: 10px 50px;
   transition: 0.1s;
 
   &:hover {
@@ -23,12 +23,12 @@ const Button = styled.button`
   }
 `;
 
-const InputWrapper = styled.div`
-  padding: 1rem 0rem 1rem 6rem;
+export const InputWrapper = styled.div`
+  padding: 1px 0px 1px 100px;
   display: flex;
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   padding: 6px 12px;
   font-size: 16px;
   font-weight: 400;
@@ -49,4 +49,3 @@ const Input = styled.input`
   }
 `;
 
-export { ButtonBlock, ControlPanelWrapper, Span, Button, InputWrapper, Input };

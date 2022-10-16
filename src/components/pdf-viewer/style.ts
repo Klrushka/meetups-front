@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PdfWrapper = styled.div`
-  margin: 20rem;
+  margin: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

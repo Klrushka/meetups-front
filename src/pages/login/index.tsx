@@ -6,7 +6,7 @@ import * as yup from 'yup';
 // import { loginUser } from '@api';
 import { ILoginCredentials } from '@interfaces';
 import { loginUser } from '@mock/backend';
-import './index.css';
+import { FormWrapper, ImgWrapper, Form, FormInner, Input, Error, Label, Button } from './style';
 
 export const LoginPage: React.FC<{
   setToken: (token: { token: string }) => void;
@@ -33,11 +33,11 @@ export const LoginPage: React.FC<{
   };
 
   return (
-    <div className="formWrapper">
-      <div className="imgMeetup">
+    <FormWrapper className="formWrapper">
+      <ImgWrapper className="imgMeetup">
         <img src="m.png" alt="123" />
-      </div>
-      <div className="Form">
+      </ImgWrapper>
+      <Form>
         <Formik
           initialValues={{
             password: '',
@@ -57,12 +57,11 @@ export const LoginPage: React.FC<{
             handleSubmit,
             dirty,
           }) => (
-            <div className="formInner">
+            <FormInner>
               <p>
-                <label htmlFor={`email`}>Email</label>
+                <Label htmlFor={`email`}>Email</Label>
                 <br />
-                <input
-                  className={'input'}
+                <Input
                   type={`email`}
                   name={`email`}
                   onChange={handleChange}
@@ -71,13 +70,12 @@ export const LoginPage: React.FC<{
                 />
               </p>
               {touched.email && errors.email && (
-                <p className={'error'}>{errors.email}</p>
+                <Error className={'error'}>{errors.email}</Error>
               )}
               <p>
-                <label htmlFor={`secondName`}>Пароль</label>
+                <Label htmlFor={`secondName`}>Пароль</Label>
                 <br />
-                <input
-                  className={'input'}
+                <Input
                   type={`password`}
                   name={`password`}
                   onChange={handleChange}
@@ -86,9 +84,9 @@ export const LoginPage: React.FC<{
                 />
               </p>
               {touched.password && errors.password && (
-                <p className={'error'}>{errors.password}</p>
+                <Error className={'error'}>{errors.password}</Error>
               )}
-              <button
+              <Button
                 disabled={!isValid || !dirty}
                 type={`submit`}
                 onClick={
@@ -96,12 +94,12 @@ export const LoginPage: React.FC<{
                 }
               >
                 Log in
-              </button>
-            </div>
+              </Button>
+            </FormInner>
           )}
         </Formik>
-      </div>
-    </div>
+      </Form>
+    </FormWrapper>
   );
 };
 

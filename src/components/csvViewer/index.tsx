@@ -1,9 +1,10 @@
 import React from 'react';
+import { CSVWrapper, TextArea } from './style';
 
 export const Csv: React.FC<{ csv: string }> = ({ csv }) => {
   return (
-    <div className="csv">
-      <textarea value={csv} readOnly></textarea>
-    </div>
+    <CSVWrapper>
+      <TextArea value={csv} readOnly></TextArea>
+    </CSVWrapper>
   );
 };
