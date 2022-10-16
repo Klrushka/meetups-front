@@ -9,7 +9,7 @@ import {
   Input,
   InputWrapper,
   Span,
-} from '@styled';
+} from './style';
 
 // import { searchHandler } from '@helpers/search.handler';
 

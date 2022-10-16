@@ -3,15 +3,15 @@ import { ControlPanel, MeetupList, Navbar, NewMeetupWindow } from '@components';
 import { getToken } from '@helpers';
 import { IMeetup } from '@interfaces';
 import { data } from '@mock';
+import { NotAuthPage } from '../not-auth';
 // import { fetchData } from '@api';
 import {
+  Main,
   MainPanel,
   MeetupInfo,
   MeetupListWrapper,
   MeetupPageWrapper,
-} from '@styled';
-import { Main } from '@styled/main';
-import { NotAuthPage } from '../not-auth-page';
+} from './style';
 
 export const MeetupPage = () => {
   const token = getToken();

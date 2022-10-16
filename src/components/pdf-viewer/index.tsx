@@ -1,8 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { fetchPdf } from '@mock/backend';
+import { Link, PdfWrapper } from './style';
+
 // import { fetchPdf } from '@api/pdf.fetch.api';
-import './index.css';
 
 export const Pdf = () => {
   const [pdfLink, setPdfLink] = useState<string>();
@@ -12,8 +13,8 @@ export const Pdf = () => {
   }, []);
 
   return (
-    <div className="pdfLink">
-      <a href={pdfLink}>Your PDF</a>
-    </div>
+    <PdfWrapper>
+      <Link href={pdfLink}>Your PDF</Link>
+    </PdfWrapper>
   );
 };

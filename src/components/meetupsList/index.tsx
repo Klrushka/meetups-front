@@ -2,7 +2,7 @@ import React from 'react';
 import { Meetup } from '@components';
 import { IMeetup } from '@interfaces/meetup.interface';
 import { deleteMeetup } from '@mock/backend';
-import { SectionWrapper } from '@styled';
+import { SectionWrapper } from './style';
 
 // import { deleteMeetup } from '@api/delete.meetup.api';
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NewMeetupWrapper = styled.div`
+export const NewMeetupWrapper = styled.div`
   background-color: white;
   padding: 1rem;
   margin: 13rem 2rem 2rem 2rem;
@@ -16,12 +16,12 @@ const NewMeetupWrapper = styled.div`
   flex-direction: column;
 `;
 
-const CreateTitle = styled.p`
+export const CreateTitle = styled.p`
   font-size: x-large;
   font-weight: bolder;
 `;
 
-const CreateButton = styled.button`
+export const CreateButton = styled.button`
   appearance: none;
   background-color: #bcbcbc;
   border: 1px solid rgba(27, 31, 35, 0.15);
@@ -53,7 +53,7 @@ const CreateButton = styled.button`
   }
 `;
 
-const Form = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,14 +61,14 @@ const Form = styled.form`
   padding: 7rem;
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 `;
 
-const CreateInput = styled.input`
+export const CreateInput = styled.input`
   padding: 6px 12px;
   font-size: 16px;
   font-weight: 400;
@@ -88,12 +88,3 @@ const CreateInput = styled.input`
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
   }
 `;
-
-export {
-  NewMeetupWrapper,
-  CreateTitle,
-  CreateButton,
-  Form,
-  Label,
-  CreateInput,
-};

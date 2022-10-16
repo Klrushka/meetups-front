@@ -9,7 +9,7 @@ import {
   Form,
   Label,
   NewMeetupWrapper,
-} from '@styled';
+} from './style';
 
 // import { createMeetup } from '@api/create.meetup.api';
 

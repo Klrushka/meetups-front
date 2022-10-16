@@ -11,7 +11,7 @@ import {
   MeetupWrapper,
   Tags,
   Title,
-} from '@styled/meetup';
+} from './style';
 
 export const Meetup: React.FunctionComponent<{
   meetup: IMeetup;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const MeetupWrapper = styled.div`
+export const MeetupWrapper = styled.div`
   word-break: break-all;
   background-color: white;
   padding: 1rem;
@@ -19,26 +19,26 @@ const MeetupWrapper = styled.div`
   }
 `;
 
-const Tags = styled.ul`
+export const Tags = styled.ul`
   display: flex;
   list-style-type: none;
   flex-wrap: wrap;
 `;
 
-const HeadWrapper = styled.div`
+export const HeadWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: large;
 `;
 
-const Title = styled.p`
+export const Title = styled.p`
   font-weight: bolder;
 `;
 
-const DateMap = styled.div``;
+export const DateMap = styled.div``;
 
-const Location = styled.div`
+export const Location = styled.div`
   padding-left: 8rem;
   transition: 0.5s;
 
@@ -47,12 +47,12 @@ const Location = styled.div`
   }
 `;
 
-const Link = styled.a`
+export const Link = styled.a`
   text-decoration: none;
   color: black;
 `;
 
-const ListItem = styled.li`
+export const ListItem = styled.li`
   word-break: keep-all;
   word-break: none;
   margin: 0.5rem 2rem 0.5rem 0;
@@ -66,7 +66,7 @@ const ListItem = styled.li`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   appearance: none;
   background-color: #bcbcbc;
   border: 1px solid rgba(27, 31, 35, 0.15);
@@ -97,15 +97,3 @@ const Button = styled.button`
     background-color: red;
   }
 `;
-
-export {
-  MeetupWrapper,
-  Tags,
-  HeadWrapper,
-  Title,
-  DateMap,
-  Location,
-  Link,
-  ListItem,
-  Button,
-};

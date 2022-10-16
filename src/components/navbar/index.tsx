@@ -1,6 +1,6 @@
 import React from 'react';
 import { navbarRoutes } from '@mock/navbar.routes';
-import { LinkWrapper, NavbarItem, NavbarList, NavbarWrapper } from '@styled';
+import { LinkWrapper, NavbarItem, NavbarList, NavbarWrapper } from './style';
 
 export const Navbar: React.FunctionComponent = () => {
   return (
