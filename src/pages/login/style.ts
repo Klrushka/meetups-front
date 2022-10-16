@@ -22,8 +22,8 @@ export const Form = styled.div`
 `
 
 export const FormInner = styled.div`
-  padding: 1rem;
-  border-radius: 1rem;
+  padding: 10px;
+  border-radius: 5px;
   min-height: 75%;
   min-width: 70%;
   display: flex;

@@ -21,6 +21,8 @@
     "^@mock/(.*)$",
     "^@styled",
     "^@styled/(.*)$",
+    "^@validation",
+    "^@validation/(.*)$",
     "<THIRD_PARTY_MODULES>",
     "^[./]"
   ],

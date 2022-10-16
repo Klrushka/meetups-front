@@ -2,20 +2,17 @@ import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as yup from 'yup';
 // import { loginUser } from '@api';
 import { ILoginCredentials } from '@interfaces';
 import { loginUser } from '@mock/backend';
 import { FormWrapper, ImgWrapper, Form, FormInner, Input, Error, Label, Button } from './style';
+import { loginSchema } from '@validation';
 
 export const LoginPage: React.FC<{
   setToken: (token: { token: string }) => void;
 }> = ({ setToken }) => {
   const navigate = useNavigate();
-  const validationsSchema = yup.object().shape({
-    password: yup.string().required('Required!'),
-    email: yup.string().email('Enter a valid email').required('Required!'),
-  });
+  
 
   const submitFormHandler = async (values: ILoginCredentials) => {
     const { email, password } = values;
@@ -45,7 +42,7 @@ export const LoginPage: React.FC<{
           }}
           validateOnBlur
           onSubmit={submitFormHandler}
-          validationSchema={validationsSchema}
+          validationSchema={loginSchema}
         >
           {({
             values,

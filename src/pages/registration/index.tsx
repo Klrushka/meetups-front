@@ -2,22 +2,14 @@
 import { Formik } from 'formik';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as yup from 'yup';
 import { IRegistrationCredentials } from '@interfaces';
 import { registrateUser } from '@mock/backend';
 import { Button, EmailCheckText, Error, Form, FormInner, FormWrapper, ImgWrapper, Input, Label } from './style';
+import { registrationSchema } from '@validation';
 
 export const RegistratePage = () => {
   const [showMailSendedMessage, setShowMailSendedMessage] = useState(false);
   const navigate = useNavigate();
-
-  const validationsSchema = yup.object().shape({
-    name: yup.string().required('Required!'),
-    surname: yup.string().required('Required!'),
-    password: yup.string().required('Required!'),
-    email: yup.string().email('Enter a valid email').required('Required!'),
-    telephone: yup.string().required('Required!'),
-  });
 
   const submitFormHandler = async (values: IRegistrationCredentials) => {
     const { email, password, surname, name, telephone } = values;
@@ -55,7 +47,7 @@ export const RegistratePage = () => {
             }}
             validateOnBlur
             onSubmit={submitFormHandler}
-            validationSchema={validationsSchema}
+            validationSchema={registrationSchema}
           >
             {({
               values,

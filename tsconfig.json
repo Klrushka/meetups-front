@@ -32,6 +32,8 @@
       "@components/*": ["./src/components/*"],
       "@styled": ["./src/styled"],
       "@styled/*": ["./src/styled/*"],
+      "@validation": ["./src/validation"],
+      "@validation/*": ["./src/validation/*"],
     }
     
   },
