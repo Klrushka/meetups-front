@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 
 export const PdfWrapper = styled.div`
+  background-color: ${props => props.theme.background}
+  height: 100vh;
+`
+export const LinkWrapper = styled.div`
   margin: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: ${props => props.theme.inputBackgrount}
   border-radius: 1rem;
   padding: 2rem;
   transition: transform 0.3s;
+  border-color: ${props => props.theme.border2}
   border-style: solid;
   border-width: 0.9px;
   border-color: #b0afae;
@@ -23,5 +28,5 @@ export const PdfWrapper = styled.div`
 
 export const Link = styled.a`
   text-decoration: none;
-  color: black;
+  color: ${props => props.theme.text}
 `;

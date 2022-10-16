@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const MeetupWrapper = styled.div`
   word-break: break-all;
-  background-color: white;
+  background-color: ${props => props.theme.itemBackground}
   padding: 30px;
   margin: 25px;
-  color: black;
+  color: ${props => props.theme.text}
   border-style: solid;
   border-width: 0.9px;
-  border-color: #b0afae;
+  border-color: ${props => props.theme.border}
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 0.3s;
@@ -49,32 +49,32 @@ export const Location = styled.div`
 
 export const Link = styled.a`
   text-decoration: none;
-  color: black;
+  color: ${props => props.theme.text}
 `;
 
 export const ListItem = styled.li`
   word-break: keep-all;
   word-break: none;
   margin: 10px 20px 10px 0;
-  background: #cccccc;
+  background: ${props => props.theme.item2Background}
   padding: 5px 40px 5px 40px;
   border-radius: 5px;
   border-style: solid;
   border-width: 0.9px;
-  border-color: #b0afae;
+  border-color: ${props => props.theme.border2}
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 export const Button = styled.button`
   appearance: none;
-  background-color: #bcbcbc;
+  background-color: ${props => props.theme.accent2}
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
     rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   box-sizing: border-box;
-  color: #24292e;
+  color: white;
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system, system-ui, 'Segoe UI', Helvetica, Arial,

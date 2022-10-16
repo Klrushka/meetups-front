@@ -1,16 +1,18 @@
 // import { registrateUser } from '@api/registrate.user.api';
 import { Formik } from 'formik';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IRegistrationCredentials } from '@interfaces';
 import { registrateUser } from '@mock/backend';
 import { Button, EmailCheckText, Error, Form, FormInner, FormWrapper, ImgWrapper, Input, Label } from './style';
 import { registrationSchema } from '@validation';
+import { themeSwithcher } from '@helpers';
+import { ThemePreferenceContext } from 'src/App';
 
 export const RegistratePage = () => {
   const [showMailSendedMessage, setShowMailSendedMessage] = useState(false);
   const navigate = useNavigate();
-
+  const theme = useContext(ThemePreferenceContext);
   const submitFormHandler = async (values: IRegistrationCredentials) => {
     const { email, password, surname, name, telephone } = values;
     const token = await registrateUser({
@@ -147,6 +149,7 @@ export const RegistratePage = () => {
               </Form>
             )}
           </Formik>
+          <input type={'checkbox'} onClick={themeSwithcher(theme.setTheme)}/>
           {showMailSendedMessage && (
             <EmailCheckText>Please check your Email and verify it!</EmailCheckText>
           )}

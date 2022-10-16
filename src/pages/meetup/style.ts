@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MeetupPageWrapper = styled.div`
-  background-color: #e0e0e0;
+  background-color: ${props => props.theme.background}
   margin: 0;
   padding: 0;
   display: block;
@@ -24,7 +24,7 @@ export const MeetupListWrapper = styled.div`
   background-color: transparent;
   overflow: scroll;
   height: 100vh;
-  color: white;
+  color: ${props => props.theme.text}
   display: flex;
   overflow-x: hidden;
 `;

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 // import { getCsvData } from '@api'
 import { Csv, Navbar } from '@components';
 import { getCsvData } from '@mock/backend';
+import { MeetupPageWrapper } from '../meetup/style';
 
 export const CsvPage = () => {
   const [data, setData] = useState('');
@@ -18,9 +19,9 @@ export const CsvPage = () => {
   }, []);
 
   return (
-    <div>
+    <MeetupPageWrapper>
       <Navbar />
       <Csv csv={data} />
-    </div>
+    </MeetupPageWrapper>
   );
 };

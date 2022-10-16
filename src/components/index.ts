@@ -5,4 +5,4 @@ export * from './meetup/index';
 export * from './meetupsList/index';
 export * from './navbar/index';
 export * from './newMeetup/index';
-export * from './pdf-viewer/index';
+export * from './pdfViewer/index';

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Navbar } from '@components/navbar';
-import { Pdf } from '@components/pdf-viewer';
+import { Pdf } from '@components/pdfViewer';
+import { MeetupPageWrapper } from '../meetup/style';
 
 export const PdfPage = () => {
   return (
-    <div>
+    <MeetupPageWrapper>
       <Navbar />
       <Pdf />
-    </div>
+    </MeetupPageWrapper>
   );
 };

@@ -3,13 +3,15 @@ import styled from 'styled-components';
 export const FormWrapper = styled.div`
   display: flex;
   min-height: 100vh;
-  color: white
+  color: ${props => props.theme.text}
+  background-color: ${props => props.theme.background}
 `
 
 export const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
 `
 
 export const Form = styled.div`
@@ -19,6 +21,7 @@ export const Form = styled.div`
   align-items: center;
   width: 60%;
   justify-content: center;
+
 `
 
 export const FormInner = styled.div`
@@ -30,11 +33,11 @@ export const FormInner = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
-  color: black;
+  background-color: ${props => props.theme.itemBackground}
+  color: ${props => props.theme.text}
   border-style: solid;
   border-width: 0.9px;
-  border-color: #b0afae;
+  border-color: ${props => props.theme.border}
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 0.3s;
@@ -46,23 +49,22 @@ export const Input = styled.input`
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background-color: ${props => props.theme.inputBackgrount}
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border-color: ${props => props.theme.border2}
+  border: 1px solid;
   appearance: none;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   :focus {
-    color: #212529;
-    background-color: #fff;
-    border-color: #86b7fe;
+    color: ${props => props.theme.text}
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
   }
 `
 
 export const Error = styled.p`
-  color: red;
+  color: ${props => props.theme.accent2}
 `
 
 export const Label = styled.label`
@@ -101,7 +103,7 @@ export const Button = styled.button`
   word-wrap: break-word;
 
   &:hover {
-    background-color: rgb( 128, 128, 128 );
+    background-color: ${props => props.theme.accent1}
 }
 `
 export const EmailCheckText = styled.p`

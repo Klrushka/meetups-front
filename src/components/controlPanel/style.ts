@@ -10,9 +10,11 @@ export const ButtonBlock = styled.div`
 
 export const Span = styled.span`
   font-size: x-large;
+  color: ${props => props.theme.text}
 `;
 export const Button = styled.button`
-  background: #00be23;
+  background: ${props => props.theme.accent1}
+  border-color: ${props => props.theme.accent1}
   color: white;
   border-radius: 5px;
   padding: 10px 50px;
@@ -34,15 +36,15 @@ export const Input = styled.input`
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background-color: ${props => props.theme.inputBackgrount}
+  border-color: ${props => props.theme.accent1}
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 1px solid;
   appearance: none;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   :focus {
-    color: #212529;
-    background-color: #fff;
+    color: ${props => props.theme.text}
     border-color: #86b7fe;
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);

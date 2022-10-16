@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { fetchPdf } from '@mock/backend';
-import { Link, PdfWrapper } from './style';
+import { Link, LinkWrapper, PdfWrapper } from './style';
 
 // import { fetchPdf } from '@api/pdf.fetch.api';
 
@@ -14,7 +14,9 @@ export const Pdf = () => {
 
   return (
     <PdfWrapper>
-      <Link href={pdfLink}>Your PDF</Link>
+      <LinkWrapper>
+        <Link href={pdfLink}>Your PDF</Link>
+      </LinkWrapper>
     </PdfWrapper>
   );
 };
