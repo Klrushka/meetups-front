@@ -10,7 +10,7 @@ export const ButtonBlock = styled.div`
 
 export const Span = styled.span`
   font-size: x-large;
-  color: ${props => props.theme.text}
+  color: ${props => props.theme.text};
 `;
 export const Button = styled.button`
   background: ${props => props.theme.accent1}
@@ -50,4 +50,3 @@ export const Input = styled.input`
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
   }
 `;
-

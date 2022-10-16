@@ -1,4 +1,4 @@
-import { Themes } from './themes.enum'
+import { Themes } from './themes.enum';
 
 export const getTheme = (userTheme: Themes) => {
   const theme = { ...themes[userTheme], ...base };
@@ -13,12 +13,11 @@ const dark = {
   accent1: '#30D158FF;',
   accent2: '#FF453AFF;',
   inputBackgrount: '#EBEBF54D;',
-  itemBackground: '#1C1C1EFF;', 
+  itemBackground: '#1C1C1EFF;',
   border: '#2C2C2EFF;',
   border2: '#EBEBF52E;',
   item2Background: '#2C2C2EFF;',
 };
-
 
 const light = {
   primary: 'white;',
@@ -35,13 +34,10 @@ const light = {
 };
 
 const base = {
-  sizes: {
-
-  }
+  sizes: {},
 };
 
 const themes = {
   [Themes.LIGHT]: light,
   [Themes.DARK]: dark,
 };
-

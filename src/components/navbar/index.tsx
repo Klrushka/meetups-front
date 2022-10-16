@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { navbarRoutes } from '@mock/navbar.routes';
-import { LinkWrapper, NavbarItem, NavbarList, NavbarWrapper } from './style';
 import { ThemePreferenceContext } from 'src/App';
 import { themeSwithcher } from '@helpers';
+import { navbarRoutes } from '@mock/navbar.routes';
+import { LinkWrapper, NavbarItem, NavbarList, NavbarWrapper } from './style';
 
 export const Navbar: React.FunctionComponent = () => {
-  const theme = useContext(ThemePreferenceContext)
+  const theme = useContext(ThemePreferenceContext);
 
   return (
     <NavbarWrapper>
@@ -21,7 +21,7 @@ export const Navbar: React.FunctionComponent = () => {
           </NavbarItem>
         ))}
         <NavbarItem>
-          <input type={'checkbox'} onClick={themeSwithcher(theme.setTheme)}/>
+          <input type={'checkbox'} onClick={themeSwithcher(theme.setTheme)} />
         </NavbarItem>
       </NavbarList>
     </NavbarWrapper>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PdfWrapper = styled.div`
   background-color: ${props => props.theme.background}
   height: 100vh;
-`
+`;
 export const LinkWrapper = styled.div`
   margin: 100px;
   display: flex;
@@ -28,5 +28,5 @@ export const LinkWrapper = styled.div`
 
 export const Link = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.text}
+  color: ${props => props.theme.text};
 `;

@@ -5,14 +5,13 @@ export const FormWrapper = styled.div`
   min-height: 100vh;
   color: ${props => props.theme.text}
   background-color: ${props => props.theme.background}
-`
+`;
 
 export const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
-`
+`;
 
 export const Form = styled.div`
   float: right;
@@ -21,8 +20,7 @@ export const Form = styled.div`
   align-items: center;
   width: 60%;
   justify-content: center;
-
-`
+`;
 
 export const FormInner = styled.div`
   padding: 10px;
@@ -41,7 +39,7 @@ export const FormInner = styled.div`
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 0.3s;
-`
+`;
 
 export const Input = styled.input`
   padding: 6px 12px;
@@ -61,11 +59,11 @@ export const Input = styled.input`
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
   }
-`
+`;
 
 export const Error = styled.p`
-  color: ${props => props.theme.accent2}
-`
+  color: ${props => props.theme.accent2};
+`;
 
 export const Label = styled.label`
   align-items: center;
@@ -73,7 +71,7 @@ export const Label = styled.label`
   justify-content: center;
   flex-direction: column;
   font-size: large;
-`
+`;
 
 export const Button = styled.button`
   appearance: none;
@@ -103,9 +101,9 @@ export const Button = styled.button`
   word-wrap: break-word;
 
   &:hover {
-    background-color: ${props => props.theme.accent1}
-}
-`
+    background-color: ${props => props.theme.accent1};
+  }
+`;
 export const EmailCheckText = styled.p`
   color: black;
-`
+`;

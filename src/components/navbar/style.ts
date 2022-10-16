@@ -5,13 +5,10 @@ export const NavbarWrapper = styled.nav`
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: ${props => props.theme.nav}
+  background-color: ${props => props.theme.nav};
 `;
 
-export const NavbarList = styled.ul`
-  
-
-`;
+export const NavbarList = styled.ul``;
 
 export const NavbarItem = styled.li`
   display: inline-block;

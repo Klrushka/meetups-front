@@ -49,7 +49,7 @@ export const Location = styled.div`
 
 export const Link = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.text}
+  color: ${props => props.theme.text};
 `;
 
 export const ListItem = styled.li`
