@@ -27,7 +27,7 @@ export const Meetup: React.FunctionComponent<{
         <Title>{title}</Title>
         <DateMap>
           <Location>
-            <img width="20" height="" src="pin.png" alt="pin" />
+            <img width="20" height="20px" src="pin.png" alt="pin" />
             <Link href={locationUrl}>Map</Link>
           </Location>
           <p className="dueTime">{formatDate(dueTime)}</p>

@@ -34,6 +34,7 @@ export const HeadWrapper = styled.div`
 
 export const Title = styled.p`
   font-weight: bolder;
+  max-width: 400px;
 `;
 
 export const DateMap = styled.div``;
@@ -41,6 +42,8 @@ export const DateMap = styled.div``;
 export const Location = styled.div`
   padding-left: 130px;
   transition: 0.5s;
+  display: flex;
+  align-items: center;
 
   &: hover {
     transform: scale(1.05);
@@ -53,8 +56,6 @@ export const Link = styled.a`
 `;
 
 export const ListItem = styled.li`
-  word-break: keep-all;
-  word-break: none;
   margin: 10px 20px 10px 0;
   background: ${props => props.theme.item2Background}
   padding: 5px 40px 5px 40px;
@@ -64,6 +65,8 @@ export const ListItem = styled.li`
   border-color: ${props => props.theme.border2}
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  max-width: 650px;
+  overflow: visible;
 `;
 
 export const Button = styled.button`
