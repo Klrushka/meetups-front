@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { routes } from '@mock';
 import { getTheme } from '@themes/theme';
 import { Themes } from '@themes/themes.enum';
+import { isDark } from '@helpers/theme.cheker';
 
 export const ThemePreferenceContext = React.createContext({
   theme: getTheme(Themes.LIGHT),
@@ -11,8 +12,13 @@ export const ThemePreferenceContext = React.createContext({
 });
 
 function App() {
-  const userTheme = getTheme(Themes.LIGHT);
-  const [theme, setTheme] = useState(userTheme);
+
+  console.log('theme', isDark());
+  
+  const userTheme = isDark() ? Themes.DARK : Themes.LIGHT
+  console.log(userTheme);
+  
+  const [theme, setTheme] = useState(getTheme(userTheme));
 
   return (
     <ThemePreferenceContext.Provider value={{ theme, setTheme }}>

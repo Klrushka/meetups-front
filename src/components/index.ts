@@ -6,3 +6,4 @@ export * from './meetupsList/index';
 export * from './navbar/index';
 export * from './newMeetup/index';
 export * from './pdfViewer/index';
+export * from './themeSwitcher/index';

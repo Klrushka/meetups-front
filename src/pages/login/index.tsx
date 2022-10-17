@@ -1,9 +1,7 @@
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ThemePreferenceContext } from 'src/App';
-import { themeSwithcher } from '@helpers';
 // import { loginUser } from '@api';
 import { ILoginCredentials } from '@interfaces';
 import { loginUser } from '@mock/backend';
@@ -18,12 +16,12 @@ import {
   Input,
   Label,
 } from './style';
+import { ThemeSwitcher } from '@components';
 
 export const LoginPage: React.FC<{
   setToken: (token: { token: string }) => void;
 }> = ({ setToken }) => {
   const navigate = useNavigate();
-  const theme = useContext(ThemePreferenceContext);
 
   const submitFormHandler = async (values: ILoginCredentials) => {
     const { email, password } = values;
@@ -104,10 +102,7 @@ export const LoginPage: React.FC<{
               >
                 Log in
               </Button>
-              <input
-                type={'checkbox'}
-                onClick={themeSwithcher(theme.setTheme)}
-              />
+              <ThemeSwitcher/>
             </FormInner>
           )}
         </Formik>

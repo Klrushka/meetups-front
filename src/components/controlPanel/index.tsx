@@ -1,7 +1,7 @@
 import React from 'react';
 import { showModalHandler } from '@helpers';
 import { IMeetup } from '@interfaces/meetup.interface';
-import { searchHandler } from '@mock/backend';
+// import { searchHandler } from '@mock/backend';
 import {
   Button,
   ButtonBlock,
@@ -11,7 +11,7 @@ import {
   Span,
 } from './style';
 
-// import { searchHandler } from '@helpers/search.handler';
+import { searchHandler } from '@helpers/search.handler';
 
 export const ControlPanel: React.FC<{
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
