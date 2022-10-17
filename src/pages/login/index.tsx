@@ -2,6 +2,7 @@ import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ThemeSwitcher } from '@components';
 // import { loginUser } from '@api';
 import { ILoginCredentials } from '@interfaces';
 import { loginUser } from '@mock/backend';
@@ -16,7 +17,6 @@ import {
   Input,
   Label,
 } from './style';
-import { ThemeSwitcher } from '@components';
 
 export const LoginPage: React.FC<{
   setToken: (token: { token: string }) => void;
@@ -102,7 +102,7 @@ export const LoginPage: React.FC<{
               >
                 Log in
               </Button>
-              <ThemeSwitcher/>
+              <ThemeSwitcher />
             </FormInner>
           )}
         </Formik>

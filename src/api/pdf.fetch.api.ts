@@ -1,6 +1,6 @@
 import { getToken } from '@helpers';
 
-export const fetchPdf = async ( 
+export const fetchPdf = async (
   setPdfLink: React.Dispatch<React.SetStateAction<string>>
 ) => {
   const token = `Bearer ${getToken()}`;

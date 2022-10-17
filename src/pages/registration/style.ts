@@ -100,7 +100,7 @@ export const Button = styled.button`
   white-space: nowrap;
   word-wrap: break-word;
   margin-bottom: 10px;
-  
+
   &:hover {
     background-color: ${props => props.theme.accent1};
   }

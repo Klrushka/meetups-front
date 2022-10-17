@@ -1,8 +1,14 @@
 import React, { useContext } from 'react';
 import { ThemePreferenceContext } from 'src/App';
 import { themeSwithcher } from '@helpers';
-import { CheckBox, CheckBoxLabel, CheckBoxWrapper, Label, ThemeSwitcherWrapper } from './style';
 import { isDark } from '@helpers/theme.cheker';
+import {
+  CheckBox,
+  CheckBoxLabel,
+  CheckBoxWrapper,
+  Label,
+  ThemeSwitcherWrapper,
+} from './style';
 
 export const ThemeSwitcher: React.FunctionComponent = () => {
   const theme = useContext(ThemePreferenceContext);

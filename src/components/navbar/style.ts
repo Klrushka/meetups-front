@@ -8,8 +8,7 @@ export const NavbarWrapper = styled.nav`
   background-color: ${props => props.theme.nav};
 `;
 
-export const NavbarList = styled.ul`
-`;
+export const NavbarList = styled.ul``;
 
 export const NavbarItem = styled.li`
   display: inline-block;

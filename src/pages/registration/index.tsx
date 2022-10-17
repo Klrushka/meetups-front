@@ -2,6 +2,7 @@
 import { Formik } from 'formik';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ThemeSwitcher } from '@components';
 import { IRegistrationCredentials } from '@interfaces';
 import { registrateUser } from '@mock/backend';
 import { registrationSchema } from '@validation';
@@ -16,7 +17,6 @@ import {
   Input,
   Label,
 } from './style';
-import { ThemeSwitcher } from '@components';
 
 export const RegistratePage = () => {
   const [showMailSendedMessage, setShowMailSendedMessage] = useState(false);
@@ -157,7 +157,7 @@ export const RegistratePage = () => {
               </Form>
             )}
           </Formik>
-          <ThemeSwitcher/>
+          <ThemeSwitcher />
           {showMailSendedMessage && (
             <EmailCheckText>
               Please check your Email and verify it!

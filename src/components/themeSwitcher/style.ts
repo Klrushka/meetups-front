@@ -13,7 +13,7 @@ export const CheckBoxLabel = styled.label`
   background: #bebebe;
   cursor: pointer;
   &::after {
-    content: "";
+    content: '';
     display: block;
     border-radius: 50%;
     width: 18px;
@@ -31,9 +31,9 @@ export const CheckBox = styled.input`
   width: 42px;
   height: 26px;
   &:checked + ${CheckBoxLabel} {
-    background: rgba(0.0, 0.0, 0.0, 1.0);;
+    background: rgba(0, 0, 0, 1);
     &::after {
-      content: "";
+      content: '';
       display: block;
       border-radius: 50%;
       width: 18px;
@@ -46,8 +46,8 @@ export const CheckBox = styled.input`
 
 export const ThemeSwitcherWrapper = styled.div`
   display: flex;
-`
+`;
 
 export const Label = styled.label`
   margin-right: 15px;
-`
+`;

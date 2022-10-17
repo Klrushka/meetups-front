@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { isDark } from '@helpers/theme.cheker';
 import { routes } from '@mock';
 import { getTheme } from '@themes/theme';
 import { Themes } from '@themes/themes.enum';
-import { isDark } from '@helpers/theme.cheker';
 
 export const ThemePreferenceContext = React.createContext({
   theme: getTheme(Themes.LIGHT),
@@ -12,12 +12,11 @@ export const ThemePreferenceContext = React.createContext({
 });
 
 function App() {
-
   console.log('theme', isDark());
-  
-  const userTheme = isDark() ? Themes.DARK : Themes.LIGHT
+
+  const userTheme = isDark() ? Themes.DARK : Themes.LIGHT;
   console.log(userTheme);
-  
+
   const [theme, setTheme] = useState(getTheme(userTheme));
 
   return (
