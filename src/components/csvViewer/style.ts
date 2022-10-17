@@ -11,8 +11,8 @@ export const CSVWrapper = styled.div`
 
 export const TextArea = styled.textarea`
   resize: none;
-  width: 600px;
-  height: 200px;
+  width: ${props => props.theme.csvTextAreaWidth}
+  height: ${props => props.theme.csvTextAreaHeigth}
   color: ${props => props.theme.text}
   background-color: ${props => props.theme.inputBackgrount}
   border-color: ${props => props.theme.border}

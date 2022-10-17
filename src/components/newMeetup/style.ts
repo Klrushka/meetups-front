@@ -8,7 +8,7 @@ export const NewMeetupWrapper = styled.div`
   border-style: solid;
   border-width: 0.9px;
   border-color: ${props => props.theme.border}
-  border-radius: 5px;
+  border-radius: ${props => props.theme.borderRadius}
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@ export const CreateButton = styled.button`
   appearance: none;
   background-color: ${props => props.theme.accent1}
   border: 1px solid rgba(27, 31, 35, 0.15);
-  border-radius: 6px;
+  border-radius: ${props => props.theme.borderRadius}
   box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
     rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   box-sizing: border-box;
@@ -79,7 +79,7 @@ export const CreateInput = styled.input`
   border-color: ${props => props.theme.border}
   border: 1px solid;
   appearance: none;
-  border-radius: 4px;
+  border-radius: ${props => props.theme.borderRadius}
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   :focus {
     color: ${props => props.theme.text}

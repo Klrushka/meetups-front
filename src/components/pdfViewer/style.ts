@@ -17,7 +17,7 @@ export const LinkWrapper = styled.div`
   border-style: solid;
   border-width: 0.9px;
   border-color: #b0afae;
-  border-radius: 5px;
+  border-radius: ${props => props.theme.borderRadius}
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   &: hover {

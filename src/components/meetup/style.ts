@@ -9,7 +9,7 @@ export const MeetupWrapper = styled.div`
   border-style: solid;
   border-width: 0.9px;
   border-color: ${props => props.theme.border}
-  border-radius: 5px;
+  border-radius: ${props => props.theme.borderRadius}
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 0.3s;
 
@@ -59,11 +59,10 @@ export const ListItem = styled.li`
   margin: 10px 20px 10px 0;
   background: ${props => props.theme.item2Background}
   padding: 5px 40px 5px 40px;
-  border-radius: 5px;
+  border-radius: ${props => props.theme.borderRadius}
   border-style: solid;
   border-width: 0.9px;
   border-color: ${props => props.theme.border2}
-  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   max-width: 650px;
   overflow: visible;
@@ -73,7 +72,7 @@ export const Button = styled.button`
   appearance: none;
   background-color: ${props => props.theme.accent2}
   border: 1px solid rgba(27, 31, 35, 0.15);
-  border-radius: 6px;
+  border-radius: ${props => props.theme.borderRadius}
   box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
     rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   box-sizing: border-box;

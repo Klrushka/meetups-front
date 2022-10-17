@@ -9,7 +9,7 @@ export const ButtonBlock = styled.div`
 `;
 
 export const Span = styled.span`
-  font-size: x-large;
+  font-size: ${props => props.theme.controlText};
   color: ${props => props.theme.text};
 `;
 export const Button = styled.button`
@@ -33,7 +33,7 @@ export const InputWrapper = styled.div`
 export const Input = styled.input`
   padding: 6px 12px;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: ${props => props.theme.controlFontWeight}
   line-height: 1.5;
   color: #212529;
   background-color: ${props => props.theme.inputBackgrount}

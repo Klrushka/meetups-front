@@ -34,7 +34,11 @@ const light = {
 };
 
 const base = {
-  sizes: {},
+  controlText: 'x-large;',
+  controlFontWeight: '400;',
+  csvTextAreaWidth: '600px;',
+  csvTextAreaHeigth: '200px;', 
+  borderRadius: '5px;',
 };
 
 const themes = {
