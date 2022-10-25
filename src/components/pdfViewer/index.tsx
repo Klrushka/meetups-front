@@ -1,6 +1,6 @@
+import { fetchPdf } from '../../mock/backend/pdf.fetch.mock';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { fetchPdf } from '@mock/backend';
 import { Link, LinkWrapper, PdfWrapper } from './style';
 
 // import { fetchPdf } from '@api/pdf.fetch.api';

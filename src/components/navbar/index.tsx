@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemePreferenceContext } from 'src/App';
-import { ThemeSwitcher } from '@components/themeSwitcher';
+import { ThemeSwitcher } from '@components/ThemeSwitcher';
 import { navbarRoutes } from '@mock/navbar.routes';
 import { LinkWrapper, NavbarItem, NavbarList, NavbarWrapper } from './style';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { showModalHandler } from '@helpers';
-import { searchHandler } from '@helpers/search.handler';
+import { searchHandler } from '@helpers';
 import { IMeetup } from '@interfaces/meetup.interface';
 // import { searchHandler } from '@mock/backend';
 import {

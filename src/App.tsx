@@ -7,16 +7,12 @@ import { getTheme } from '@themes/theme';
 import { Themes } from '@themes/themes.enum';
 
 export const ThemePreferenceContext = React.createContext({
-  theme: getTheme(Themes.LIGHT),
+  theme: getTheme(Themes.DARK),
   setTheme: theme => theme,
 });
 
 function App() {
-  console.log('theme', isDark());
-
   const userTheme = isDark() ? Themes.DARK : Themes.LIGHT;
-  console.log(userTheme);
-
   const [theme, setTheme] = useState(getTheme(userTheme));
 
   return (
