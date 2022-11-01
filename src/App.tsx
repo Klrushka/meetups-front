@@ -1,25 +1,30 @@
-import { LoginPage } from './pages/loginPage';
-import { MeetupPage } from './pages/meetupPage';
-import { Routes, Route, Link } from 'react-router-dom';
-import { RegistratePage } from './pages/registrationPage';
-const setToken = (token: any) => {
-  sessionStorage.setItem('token', JSON.stringify(token));
-};
+import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { isDark } from '@helpers/theme.cheker';
+import { routes } from '@mock';
+import { getTheme } from '@themes/theme';
+import { Themes } from '@themes/themes.enum';
 
+export const ThemePreferenceContext = React.createContext({
+  theme: getTheme(Themes.DARK),
+  setTheme: theme => theme,
+});
 
 function App() {
+  const userTheme = isDark() ? Themes.DARK : Themes.LIGHT;
+  const [theme, setTheme] = useState(getTheme(userTheme));
 
-  // if (!token) {
-  //   return <LoginPage setToken={setToken} />;
-  // }
-
-  // return <MeetupPage />;
   return (
-    <Routes>
-      <Route path='/login' element={<LoginPage setToken={setToken} />} />
-      <Route path='/meetups' element={<MeetupPage />} />
-      <Route path='/registration' element={<RegistratePage  />} />
-    </Routes>
+    <ThemePreferenceContext.Provider value={{ theme, setTheme }}>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          {routes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Routes>
+      </ThemeProvider>
+    </ThemePreferenceContext.Provider>
   );
 }
 

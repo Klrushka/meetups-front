@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlPanel render 1`] = `
+<div
+  className="sc-bcXHqe"
+>
+  <div>
+    <div
+      className="sc-gswNZR lpimJo"
+    >
+      <span
+        className="sc-dkrFOg bPTfjF"
+      >
+         Your Meetups
+      </span>
+      <button
+        className="sc-hLBbgP ikXIKy"
+        onClick={[Function]}
+      >
+        New
+      </button>
+    </div>
+    <div
+      className="sc-eDvSVe kAekKi"
+    >
+      <input
+        className="sc-jSUZER chnfnk"
+        onChange={[Function]}
+      />
+    </div>
+  </div>
+</div>
+`;

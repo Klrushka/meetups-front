@@ -6,11 +6,11 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": ".",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -18,10 +18,29 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@api": ["./src/api"],
+      "@api/*": ["./src/api/*"],
+      "@interfaces": ["./src/interfaces"],
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@helpers": ["./src/helpers"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@mock": ["./src/mock"],
+      "@mock/*": ["./src/mock/*"],
+      "@components": ["./src/components"],
+      "@components/*": ["./src/components/*"],
+      "@styled": ["./src/styled"],
+      "@styled/*": ["./src/styled/*"],
+      "@validation": ["./src/validation"],
+      "@validation/*": ["./src/validation/*"],
+      "@themes": ["./src/themes"],
+      "@themes/*": ["./src/themes/*"],
+    }
     
   },
   "include": [
-    "src"
-  ]
+    "src",
+    "./src/setupTests.ts"
+  ],
 }
