@@ -49,14 +49,6 @@ export const MeetupPage = () => {
           </MeetupInfo>
         </Main>
       </MeetupPageWrapper>
-      // <div>
-      //   {showModal && <NewMeetupWindow setWindowShow={setShowModal}  meetups={meetups} setMeetups={setMeetups}/>}
-      //   <div className={showModal && 'blur'}>
-      //     <ControlPanel setShowModal={setShowModal}  meetups={meetups} setMeetups={setMeetups} />
-      //     <Navbar />
-      //     <MeetupList meetups={meetups} setMeetups={setMeetups}/>
-      //   </div>
-      // </div>
     );
   } else {
     return (

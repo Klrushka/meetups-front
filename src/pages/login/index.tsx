@@ -33,7 +33,7 @@ export const LoginPage: React.FC = () => {
     });
 
     if (token.status >= 400) {
-      alert();
+      alert(token.statusText);
     } else {
       setToken(await token.json());
       navigate('/meetups');

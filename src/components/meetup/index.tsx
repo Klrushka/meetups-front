@@ -12,6 +12,7 @@ import {
   Tags,
   Title,
 } from './style';
+import pin from '../../assets/images/pin.png'
 
 export const Meetup: React.FunctionComponent<{
   meetup: IMeetup;
@@ -27,7 +28,7 @@ export const Meetup: React.FunctionComponent<{
         <Title>{title}</Title>
         <DateMap>
           <Location>
-            <img width="20" height="20px" src="pin.png" alt="pin" />
+            <img width="20" height="20px" src={pin} alt="pin" />
             <Link href={locationUrl}>Map</Link>
           </Location>
           <p className="dueTime">{formatDate(dueTime)}</p>
