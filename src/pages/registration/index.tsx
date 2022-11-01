@@ -1,6 +1,6 @@
 // import { registrateUser } from '@api/registrate.user.api';
 import { Formik } from 'formik';
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registrateUser } from '@api';
 import { ThemeSwitcher } from '@components';

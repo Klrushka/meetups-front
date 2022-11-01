@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { loginUser } from '@api';
 import { ThemeSwitcher } from '@components';
 import { setToken } from '@helpers/token';
