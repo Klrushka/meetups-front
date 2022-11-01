@@ -1,11 +1,11 @@
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ThemeSwitcher } from '@components';
-// import { loginUser } from '@api';
+import { loginUser } from '@api';
 import { ILoginCredentials } from '@interfaces';
-import { loginUser } from '@mock/backend';
+// import { loginUser } from '@mock/backend';
 import { loginSchema } from '@validation';
 import {
   Button,
@@ -16,11 +16,11 @@ import {
   ImgWrapper,
   Input,
   Label,
+  LinkWrapper,
 } from './style';
+import { setToken } from '@helpers/token';
 
-export const LoginPage: React.FC<{
-  setToken: (token: { token: string }) => void;
-}> = ({ setToken }) => {
+export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
 
   const submitFormHandler = async (values: ILoginCredentials) => {
@@ -103,6 +103,7 @@ export const LoginPage: React.FC<{
                 Log in
               </Button>
               <ThemeSwitcher />
+              <LinkWrapper to={'/registration'}>Sign up</LinkWrapper>
             </FormInner>
           )}
         </Formik>

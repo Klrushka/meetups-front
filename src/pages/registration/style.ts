@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FormWrapper = styled.div`
@@ -108,3 +109,13 @@ export const Button = styled.button`
 export const EmailCheckText = styled.p`
   color: black;
 `;
+
+export const LinkWrapper = styled(Link)`
+  color: ${props => props.theme.text};
+  text-decoration: none;
+
+  transition: 0.1s;
+  &:hover {
+    transform: scale(1.05);
+  }
+`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { IMeetup } from '@interfaces';
-import { createMeetup } from '@mock/backend';
+// import { createMeetup } from '@mock/backend';
 import {
   CreateButton,
   CreateInput,
@@ -11,7 +11,7 @@ import {
   NewMeetupWrapper,
 } from './style';
 
-// import { createMeetup } from '@api/create.meetup.api';
+import { createMeetup } from '@api/create.meetup.api';
 
 export const NewMeetupWindow: React.FC<{
   meetups: IMeetup[];
@@ -54,6 +54,7 @@ export const NewMeetupWindow: React.FC<{
             onChange={event => {
               setTitle(event.target.value);
             }}
+            name={'title'}
           />
         </Label>
         <Label>
@@ -63,6 +64,7 @@ export const NewMeetupWindow: React.FC<{
             onChange={event => {
               setDescription(event.target.value);
             }}
+            name={'descriptionInput'}
           />
         </Label>
         <Label>
@@ -72,6 +74,7 @@ export const NewMeetupWindow: React.FC<{
             onChange={event => {
               setTags(event.target.value.split(' '));
             }}
+            name={'tags'}
           />
         </Label>
         <Label>
@@ -84,6 +87,7 @@ export const NewMeetupWindow: React.FC<{
                 coordinates: event.target.value.split(' ').map(item => +item),
               });
             }}
+            name={'location'}
           />
         </Label>
         <Label>
@@ -93,11 +97,12 @@ export const NewMeetupWindow: React.FC<{
             onChange={event => {
               setDueTime(new Date(event.target.value));
             }}
+            name={'time'}
           />
         </Label>
 
         <Label>
-          <CreateButton type="submit"> Create!</CreateButton>
+          <CreateButton name='create' type="submit"> Create!</CreateButton>
           {showCreatedMessage && <p>Meetup Created!</p>}
         </Label>
       </Form>

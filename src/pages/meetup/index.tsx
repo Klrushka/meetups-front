@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { ControlPanel, MeetupList, Navbar, NewMeetupWindow } from '@components';
 import { getToken } from '@helpers';
 import { IMeetup } from '@interfaces';
-import { data } from '@mock';
+// import { data } from '@mock';
 import { NotAuthPage } from '../not-auth';
-// import { fetchData } from '@api';
+import { fetchData } from '@api';
 import {
   Main,
   MainPanel,
@@ -19,8 +19,8 @@ export const MeetupPage = () => {
   const [meetups, setMeetups] = useState<IMeetup[]>([]);
 
   useEffect(() => {
-    setMeetups(data);
-    // fetchData(setMeetups);
+    // setMeetups(data);
+    fetchData(setMeetups);
   }, []);
 
   if (token) {

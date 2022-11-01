@@ -9,9 +9,11 @@ describe('MeetupList component', () => {
 
   it('MeetupList component', () => {
     act(() => {
-      component = rendered.create(<MeetupList meetups={mockMeetups} setMeetups={mockSetMeetups} />);
+      component = rendered.create(
+        <MeetupList meetups={mockMeetups} setMeetups={mockSetMeetups} />
+      );
     });
-  
-    expect(component.toJSON).toMatchSnapshot()
+
+    expect(component.toJSON).toMatchSnapshot();
   });
-})
+});

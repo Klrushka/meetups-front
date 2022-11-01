@@ -22,10 +22,10 @@ export const ControlPanel: React.FC<{
       <div>
         <ButtonBlock>
           <Span> Your Meetups</Span>
-          <Button onClick={showModalHandler(setShowModal)}>New</Button>
+          <Button name='newMeetup' onClick={showModalHandler(setShowModal)}>New</Button>
         </ButtonBlock>
         <InputWrapper>
-          <Input onChange={searchHandler(setMeetups)} />
+          <Input name='searchInput' onChange={searchHandler(setMeetups)} />
         </InputWrapper>
       </div>
     </ControlPanelWrapper>

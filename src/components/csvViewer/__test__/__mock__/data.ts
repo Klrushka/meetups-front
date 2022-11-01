@@ -1,1 +1,2 @@
-export const mockCsvData = 'csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock'
+export const mockCsvData =
+  'csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock,csvmock';

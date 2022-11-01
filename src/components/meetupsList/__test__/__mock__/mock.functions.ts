@@ -1,1 +1,1 @@
-export const mockSetMeetups = jest.fn()
+export const mockSetMeetups = jest.fn();

@@ -4,11 +4,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ThemeSwitcher } from '@components';
 import { IRegistrationCredentials } from '@interfaces';
-import { registrateUser } from '@mock/backend';
+// import { registrateUser } from '@mock/backend';
 import { registrationSchema } from '@validation';
 import {
   Button,
-  EmailCheckText,
   Error,
   Form,
   FormInner,
@@ -16,10 +15,11 @@ import {
   ImgWrapper,
   Input,
   Label,
+  LinkWrapper,
 } from './style';
+import { registrateUser } from '@api';
 
 export const RegistratePage = () => {
-  const [showMailSendedMessage, setShowMailSendedMessage] = useState(false);
   const navigate = useNavigate();
   const submitFormHandler = async (values: IRegistrationCredentials) => {
     const { email, password, surname, name, telephone } = values;
@@ -34,7 +34,6 @@ export const RegistratePage = () => {
     if (token.status >= 400) {
       window.alert(token.status);
     } else {
-      setShowMailSendedMessage(true);
       navigate('/login');
     }
   };
@@ -158,11 +157,7 @@ export const RegistratePage = () => {
             )}
           </Formik>
           <ThemeSwitcher />
-          {showMailSendedMessage && (
-            <EmailCheckText>
-              Please check your Email and verify it!
-            </EmailCheckText>
-          )}
+          <LinkWrapper to={'/login'}>Sign in</LinkWrapper>
         </FormInner>
       </Form>
     </FormWrapper>

@@ -36,4 +36,4 @@ export const mockMeetups = [
     createdAt: '2022-10-04T13:28:10.820Z',
     updatedAt: '2022-10-04T13:28:10.820Z',
   },
-]
+];

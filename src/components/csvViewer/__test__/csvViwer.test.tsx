@@ -10,5 +10,5 @@ it('CsvViewer render', () => {
     component = rendered.create(<Csv csv={mockCsvData} />);
   });
 
-  expect(component.toJSON).toMatchSnapshot()
+  expect(component.toJSON).toMatchSnapshot();
 });

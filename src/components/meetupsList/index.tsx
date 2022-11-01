@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meetup } from '@components';
 import { IMeetup } from '@interfaces/meetup.interface';
-import { deleteMeetup } from '@mock/backend';
+// import { deleteMeetup } from '@mock/backend';
 import { SectionWrapper } from './style';
 
-// import { deleteMeetup } from '@api/delete.meetup.api';
+import { deleteMeetup } from '@api/delete.meetup.api';
 
 export const MeetupList: React.FC<{
   meetups: IMeetup[];
