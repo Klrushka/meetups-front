@@ -68,7 +68,24 @@ describe('GET /login', () => {
 
   it('meetups page', () => {
 
-    cy.visit('http://localhost:3002/meetups-front/#/meetups')
+    cy.visit('http://localhost:3002/meetups-front/#/login')
+
+    cy.get('input').should('have.value', '')
+    cy.get('button').should('have.text', 'Log in')
+    cy.get('a').should('have.text', 'Sign up')
+
+    cy.get('[type="email"]')
+      .type('japad41926@abudat.com')
+      .should('have.value', 'japad41926@abudat.com')
+
+    cy.get('[type="password"]')
+      .type('admin')
+      .should('have.value', 'admin')
+
+    cy.get('[type="submit"]')
+      .click()
+      .url().should('include', 'meetups')
+
 
     cy.get('[name="searchInput"]')
       .type('123')

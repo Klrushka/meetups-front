@@ -2,7 +2,6 @@
   "name": "meetups-front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://klrushka.github.io/meetups-front",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@leecheuk/react-google-login": "^5.4.1",
@@ -88,7 +87,8 @@
     "lint": "eslint \"./src\"",
     "format": "prettier --write \"./src/**\"",
     "test:cypress": "start-server-and-test dev http://localhost:3002 cypress",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "start:prod": "node server.js"
   },
   "eslintConfig": {
     "extends": [

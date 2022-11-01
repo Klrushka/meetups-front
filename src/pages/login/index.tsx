@@ -2,11 +2,13 @@ import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ThemeSwitcher } from '@components';
 import { loginUser } from '@api';
+import { ThemeSwitcher } from '@components';
+import { setToken } from '@helpers/token';
 import { ILoginCredentials } from '@interfaces';
 // import { loginUser } from '@mock/backend';
 import { loginSchema } from '@validation';
+import loginImg from '../../assets/images/m.png';
 import {
   Button,
   Error,
@@ -18,7 +20,6 @@ import {
   Label,
   LinkWrapper,
 } from './style';
-import { setToken } from '@helpers/token';
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ export const LoginPage: React.FC = () => {
   return (
     <FormWrapper className="formWrapper">
       <ImgWrapper className="imgMeetup">
-        <img src="m.png" alt="123" />
+        <img src={loginImg} alt="123" />
       </ImgWrapper>
       <Form>
         <Formik

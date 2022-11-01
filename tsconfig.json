@@ -22,6 +22,8 @@
     "paths": {
       "@api": ["./src/api"],
       "@api/*": ["./src/api/*"],
+      "@images": ["./src/assets/images"],
+      "@images/*": ["./src/assets/images/*"],
       "@interfaces": ["./src/interfaces"],
       "@interfaces/*": ["./src/interfaces/*"],
       "@helpers": ["./src/helpers"],

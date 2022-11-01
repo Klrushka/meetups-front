@@ -2,10 +2,12 @@
 import { Formik } from 'formik';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { registrateUser } from '@api';
 import { ThemeSwitcher } from '@components';
 import { IRegistrationCredentials } from '@interfaces';
 // import { registrateUser } from '@mock/backend';
 import { registrationSchema } from '@validation';
+import registrationImg from '../../assets/images/m.png';
 import {
   Button,
   Error,
@@ -17,7 +19,6 @@ import {
   Label,
   LinkWrapper,
 } from './style';
-import { registrateUser } from '@api';
 
 export const RegistratePage = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ export const RegistratePage = () => {
   return (
     <FormWrapper>
       <ImgWrapper>
-        <img src="m.png" alt="123" />
+        <img src={registrationImg} alt="123" />
       </ImgWrapper>
 
       <Form>
