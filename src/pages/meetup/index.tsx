@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { ControlPanel, MeetupList, Navbar, NewMeetupWindow } from '@components';
+import { fetchData } from '@api';
+import {
+  ControlPanel,
+  MeetupList,
+  MeetupRedactor,
+  Navbar,
+  NewMeetupWindow,
+} from '@components';
 import { getToken } from '@helpers';
+import { getMeetupByIdFromMeetupList } from '@helpers/meetup';
 import { IMeetup } from '@interfaces';
 // import { data } from '@mock';
 import { NotAuthPage } from '../not-auth';
-import { fetchData } from '@api';
 import {
   Main,
   MainPanel,
@@ -17,6 +24,9 @@ export const MeetupPage = () => {
   const token = getToken();
   const [showModal, setShowModal] = useState(false);
   const [meetups, setMeetups] = useState<IMeetup[]>([]);
+  const [selectedMeetupId, setSeletedMeetupId] = useState<string>('');
+  const [isShowMeetupRedactorWindow, setIsShowMeetupRedactorWindow] =
+    useState<boolean>(false);
 
   useEffect(() => {
     // setMeetups(data);
@@ -33,9 +43,16 @@ export const MeetupPage = () => {
               setShowModal={setShowModal}
               meetups={meetups}
               setMeetups={setMeetups}
+              setIsShowMeetupRedactorWindow={setIsShowMeetupRedactorWindow}
             />
             <MeetupListWrapper>
-              <MeetupList meetups={meetups} setMeetups={setMeetups} />
+              <MeetupList
+                meetups={meetups}
+                setMeetups={setMeetups}
+                setSeletedMeetupId={setSeletedMeetupId}
+                setIsShowMeetupRedactorWindow={setIsShowMeetupRedactorWindow}
+                setWindowShow={setShowModal}
+              />
             </MeetupListWrapper>
           </MainPanel>
           <MeetupInfo>
@@ -44,6 +61,13 @@ export const MeetupPage = () => {
                 setWindowShow={setShowModal}
                 meetups={meetups}
                 setMeetups={setMeetups}
+              />
+            )}
+            {isShowMeetupRedactorWindow && (
+              <MeetupRedactor
+                meetup={getMeetupByIdFromMeetupList(meetups, selectedMeetupId)}
+                setMeetups={setMeetups}
+                setWindowShow={setIsShowMeetupRedactorWindow}
               />
             )}
           </MeetupInfo>

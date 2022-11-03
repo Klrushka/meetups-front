@@ -7,3 +7,4 @@ export * from './Navbar/index';
 export * from './NewMeetup/index';
 export * from './PdfViewer/index';
 export * from './ThemeSwitcher/index';
+export * from './MeetupRedactor/index'

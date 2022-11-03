@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemePreferenceContext } from 'src/App';
 import { themeSwithcher } from '@helpers';
-import { isDark } from '@helpers/theme.cheker';
+import { isThemeDark } from '@helpers/theme.cheker';
 import {
   CheckBox,
   CheckBoxLabel,
@@ -21,7 +21,7 @@ export const ThemeSwitcher: React.FunctionComponent = () => {
           id="checkbox"
           type="checkbox"
           onClick={themeSwithcher(theme.setTheme)}
-          defaultChecked={isDark()}
+          defaultChecked={isThemeDark()}
         />
         <CheckBoxLabel htmlFor="checkbox" />
       </CheckBoxWrapper>

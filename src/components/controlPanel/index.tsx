@@ -16,13 +16,14 @@ export const ControlPanel: React.FC<{
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   meetups: IMeetup[];
   setMeetups: React.Dispatch<React.SetStateAction<IMeetup[]>>;
-}> = ({ setShowModal, setMeetups }) => {
+  setIsShowMeetupRedactorWindow: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ setShowModal, setMeetups, setIsShowMeetupRedactorWindow}) => {
   return (
     <ControlPanelWrapper>
       <div>
         <ButtonBlock>
           <Span> Your Meetups</Span>
-          <Button name='newMeetup' onClick={showModalHandler(setShowModal)}>New</Button>
+          <Button name='newMeetup' onClick={showModalHandler(setShowModal, setIsShowMeetupRedactorWindow)}>New</Button>
         </ButtonBlock>
         <InputWrapper>
           <Input name='searchInput' onChange={searchHandler(setMeetups)} />

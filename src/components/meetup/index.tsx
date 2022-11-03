@@ -17,13 +17,14 @@ import pin from '../../assets/images/pin.png'
 export const Meetup: React.FunctionComponent<{
   meetup: IMeetup;
   deleteMeetup: React.MouseEventHandler;
-}> = ({ meetup, deleteMeetup }) => {
+  onClick: React.MouseEventHandler;
+}> = ({ meetup, deleteMeetup, onClick }) => {
   const { dueTime, location, tags, title, description } = meetup;
   const locationUrl = `${
     process.env.REACT_APP_MAP_LINK
   }/${location.coordinates.join(',')}`;
   return (
-    <MeetupWrapper>
+    <MeetupWrapper onClick={onClick}>
       <HeadWrapper>
         <Title>{title}</Title>
         <DateMap>

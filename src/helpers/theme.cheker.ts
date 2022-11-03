@@ -1,7 +1,11 @@
-import { isTrue } from './boolean.converter';
+import { Themes } from '@themes';
 
-export const isDark = (): boolean => {
-  localStorage.getItem('theme') ?? localStorage.setItem('theme', 'false');
-  console.log('from isDark()', localStorage.getItem('theme'));
-  return isTrue(localStorage.getItem('theme'));
+export const getThemeFromLocalStorage = (): string => {
+  localStorage.getItem('theme') ?? localStorage.setItem('theme', Themes.LIGHT);
+  return localStorage.getItem('theme');
 };
+
+
+export const isThemeDark = (): boolean => {
+  return getThemeFromLocalStorage() === 'dark' ? true : false
+}

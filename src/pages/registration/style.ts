@@ -107,7 +107,7 @@ export const Button = styled.button`
   }
 `;
 export const EmailCheckText = styled.p`
-  color: black;
+  color: ${props => props.theme.text};
 `;
 
 export const LinkWrapper = styled(Link)`

@@ -2,7 +2,11 @@ import React from 'react';
 import rendered, { act } from 'react-test-renderer';
 import { Meetup } from '../index';
 import { mockMeetup } from './__mock__/data';
-import { mockDeleteMeetup } from './__mock__/mock.functions';
+import {
+  mockDeleteMeetup,
+  setIsShowMeetupRedactorWindow,
+  setSeletedMeetupId,
+} from './__mock__/mock.functions';
 
 describe('Meetup component', () => {
   let component: rendered.ReactTestRenderer;
@@ -10,7 +14,14 @@ describe('Meetup component', () => {
   it('Meetup component', () => {
     act(() => {
       component = rendered.create(
-        <Meetup meetup={mockMeetup} deleteMeetup={mockDeleteMeetup} />
+        <Meetup
+          meetup={mockMeetup}
+          deleteMeetup={mockDeleteMeetup}
+          onClick={() => {
+            setSeletedMeetupId();
+            setIsShowMeetupRedactorWindow();
+          }}
+        />
       );
     });
 

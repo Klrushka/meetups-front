@@ -1,7 +1,7 @@
 import React from 'react';
 import rendered, { act } from 'react-test-renderer';
 import { ControlPanel } from '../index';
-import { setMeetupsMock, showModalMock } from './__mock__/mock.functions';
+import { setIsShowMeetupRedactorWindow, setMeetupsMock, showModalMock } from './__mock__/mock.functions';
 
 it('ControlPanel render', () => {
   let component: rendered.ReactTestRenderer;
@@ -12,6 +12,7 @@ it('ControlPanel render', () => {
         setShowModal={showModalMock}
         setMeetups={setMeetupsMock}
         meetups={[]}
+        setIsShowMeetupRedactorWindow={setIsShowMeetupRedactorWindow}
       />
     );
   });

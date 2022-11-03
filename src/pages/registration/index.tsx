@@ -1,6 +1,6 @@
 // import { registrateUser } from '@api/registrate.user.api';
 import { Formik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registrateUser } from '@api';
 import { ThemeSwitcher } from '@components';
@@ -10,6 +10,7 @@ import { registrationSchema } from '@validation';
 import registrationImg from '../../assets/images/m.png';
 import {
   Button,
+  EmailCheckText,
   Error,
   Form,
   FormInner,
@@ -22,6 +23,7 @@ import {
 
 export const RegistratePage = () => {
   const navigate = useNavigate();
+  const [isShowConfirmEmaiMessage, setIsShowConfirmEmailMessage] = useState(false);
   const submitFormHandler = async (values: IRegistrationCredentials) => {
     const { email, password, surname, name, telephone } = values;
     const token = await registrateUser({
@@ -35,7 +37,7 @@ export const RegistratePage = () => {
     if (token.status >= 400) {
       window.alert(token.status);
     } else {
-      navigate('/login');
+      setIsShowConfirmEmailMessage(true);
     }
   };
 
@@ -159,7 +161,9 @@ export const RegistratePage = () => {
           </Formik>
           <ThemeSwitcher />
           <LinkWrapper to={'/login'}>Sign in</LinkWrapper>
+      
         </FormInner>
+        {isShowConfirmEmaiMessage && <EmailCheckText> Please check your email and confirm it</EmailCheckText>}
       </Form>
     </FormWrapper>
   );
